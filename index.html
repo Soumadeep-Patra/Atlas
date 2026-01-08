@@ -97,11 +97,11 @@
 }
 
 .menu ul li a:hover {
-    color: #17A2B8;
+    color:#f5b000;
 }
 
 .menu ul li.active a {
-    background: #17A2B8;
+    background:#f5b000;
     color: #fff;
     padding: 10px 22px;
     border-radius: 4px;
@@ -246,6 +246,355 @@
   color: var(--color-primary);
 }
 
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("images2/Cover.jpg") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+    background: #f5b000;
+    margin: 20px auto;
+}
+
+.tagline {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.location {
+    font-size: 18px;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 38px;
+    border: 2px solid #f5b000;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #f5b000;
+    color: #000;
+}
+
+/* HERO BASE */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+
+    /* Auto background animation */
+    background-size: cover;
+    background-position: center;
+    animation: heroBg 20s infinite ease-in-out;
+}
+
+/* DARK OVERLAY */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+    background: #f5b000;
+    margin: 20px auto;
+}
+
+.tagline {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.location {
+    font-size: 18px;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 38px;
+    border: 2px solid #f5b000;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #f5b000;
+    color: #000;
+}
+/* HERO BACKGROUND FADE */
+.hero {
+    position: relative;
+    transition: background-image 2.5s ease-in-out;
+}
+
+/* keep overlay & content above */
+.hero-overlay {
+    z-index: 1;
+}
+
+.hero-content,
+.hero-arrow {
+    z-index: 2;
+}
+.hero.fade-out {
+    opacity: 0.4;
+}
+/* HERO TEXT LOAD ANIMATION */
+.hero-content > * {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroTextIn 1.5s ease-out forwards;
+}
+
+/* HERO BACKGROUND LAYERS */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* two layers for smooth crossfade */
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 3.5s ease-in-out; /* SLOW + SMOOTH */
+    z-index: 0;
+}
+
+/* default states */
+.hero::before {
+    opacity: 1;
+}
+
+.hero::after {
+    opacity: 0;
+}
+
+/* overlay & content stay above */
+.hero-overlay { z-index: 1; }
+.hero-content,
+.hero-arrow { z-index: 2; }
+
+
+
+
+/* stagger animation */
+.hero-content h1 {
+    animation-delay: 0.3s;
+}
+
+.hero-content .divider {
+    animation-delay: 0.6s;
+}
+
+.hero-content .tagline {
+    animation-delay: 0.9s;
+}
+
+.hero-content .location {
+    animation-delay: 1.2s;
+}
+
+.hero-content .hero-btn {
+    animation-delay: 1.5s;
+}
+
+@keyframes heroTextIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* AUTO BACKGROUND IMAGE CHANGE */
+@keyframes heroBg {
+    0% {
+        background-image: url("images2/2.jpg");
+    }
+    25% {
+        background-image: url("images2/3.jpg");
+    }
+    50% {
+        background-image: url("images2/Cover.jpg");
+    }
+    75% {
+        background-image: url("images2/about1.png");
+    }
+    100% {
+        background-image: url("images2/2.jpg");
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .tagline {
+        font-size: 18px;
+    }
+}
+
+/* HERO ARROWS */
+.hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #f5b000;
+    border-radius: 50%;
+    color: #f5b000;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: rgba(0,0,0,0.4);
+    transition: 0.3s;
+    user-select: none;
+}
+
+.hero-arrow:hover {
+    background: #f5b000;
+    color: #000;
+}
+
+.hero-arrow.left {
+    left: 30px;
+}
+
+.hero-arrow.right {
+    right: 30px;
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+    .hero-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+    }
+}
+
+/* HERO BACKGROUND FADE LAYER */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+    opacity: 1;
+}
+
+/* ensure content & overlay stay above */
+.hero-overlay {
+    z-index: 1;
+}
+
+.hero-content,
+.hero-arrow {
+    z-index: 2;
+}
+
+
+/* STOP SCROLL JERK / LAYOUT SHIFT */
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: auto !important;
+}
+
+/* Prevent animation from affecting layout */
+.team .section-header,
+.team .section-header * {
+    will-change: transform, opacity;
+}
+
+/* Ensure animations do NOT change height */
+.team .section-header {
+    min-height: 1px;
+}
+
+/* Kill AOS side effects (you are not using AOS JS) */
+.aos-init,
+.aos-animate {
+    transition: none !important;
+    transform: none !important;
+}
+
   </style>
   <body>
     <div id="wrap">
@@ -329,373 +678,34 @@
 
       <!--Start Banner-->
 
-      <div class="tp-banner-container">
-        <div class="tp-banner">
-          <ul>
-            <!-- SLIDE  -->
+      <section class="hero">
+  <div class="hero-overlay"></div>
 
-            <li
-              data-transition="fade"
-              data-slotamount="7"
-              data-masterspeed="500"
-              data-saveperformance="on"
-              data-title="Intro Slide"
-            >
-              <!-- MAIN IMAGE -->
-              <img
-                src="images2/2.jpg"
-                alt=""
-                data-bgposition="center top"
-                data-bgfit="cover"
-                data-bgrepeat="no-repeat"
-              />
-              <!-- LAYERS -->
+  <div class="hero-content">
+    <h1>
+      Welcome to Atlas<br />
+      Foundries
+    </h1>
 
-              <div
-                class="tp-caption black_thin_34 customin tp-resizeme rs-parallaxlevel-0"
-                data-x="center"
-                data-y="250"
-                data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                data-speed="500"
-                data-start="1400"
-                data-easing="Back.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                style="
-                  z-index: 10;
-                  max-width: auto;
-                  max-height: auto;
-                  font-size: 52px;
-                  white-space: nowrap;
-                "
-              >
-                WELCOME TO
-              </div>
+    <div class="divider"></div>
 
-              <div
-                class="tp-caption black_thin_34 black_thin_34_bold customin tp-resizeme rs-parallaxlevel-0"
-                data-x="center"
-                data-y="340"
-                data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                data-speed="500"
-                data-start="1400"
-                data-easing="Back.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                style="
-                  z-index: 10;
-                  max-width: auto;
-                  max-height: auto;
-                  white-space: nowrap;
-                  font-size: 52px;
-                "
-              >
-                ATLAS FOUNDRIES
-              </div>
-            </li>
+    <p class="tagline">
+      “Casting solutions through Lost Foam Process for<br />
+      all your engineered casting requirements”
+    </p>
 
-            <li
-              data-transition="fade"
-              data-slotamount="7"
-              data-masterspeed="500"
-              data-saveperformance="on"
-              data-title="Intro Slide"
-            >
-              <!-- MAIN IMAGE -->
-              <img
-                src="images2/3.jpg"
-                alt=""
-                data-bgposition="center top"
-                data-bgfit="cover"
-                data-bgrepeat="no-repeat"
-              />
-              <!-- LAYERS -->
+    <p class="location">Location - Kolkata, Howrah</p>
 
-              <div
-                class="tp-caption black_thin_34 customin tp-resizeme rs-parallaxlevel-0"
-                data-x="0"
-                data-y="250"
-                data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                data-speed="500"
-                data-start="1400"
-                data-easing="Back.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                style="
-                  z-index: 10;
-                  max-width: auto;
-                  max-height: auto;
-                  white-space: nowrap;
-                  font-size: 52px;
-                "
-              >
-                WELCOME TO
-              </div>
+    <a href="about-us.html" class="hero-btn">Get Started</a>
+  </div>
+  <div class="hero-arrow left">&#10094;</div>
+<div class="hero-arrow right">&#10095;</div>
 
-              <div
-                class="tp-caption black_thin_34 black_thin_34_bold customin tp-resizeme rs-parallaxlevel-0"
-                data-x="0"
-                data-y="340"
-                data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                data-speed="500"
-                data-start="1400"
-                data-easing="Back.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                style="
-                  z-index: 10;
-                  max-width: auto;
-                  max-height: auto;
-                  white-space: nowrap;
-                  font-size: 52px;
-                "
-              >
-                ATLAS FOUNDRIES
-              </div>
-            </li>
+</section>
 
-            <li
-              data-transition="fade"
-              data-slotamount="7"
-              data-masterspeed="500"
-              data-saveperformance="on"
-              data-title="Intro Slide"
-            >
-              <!-- MAIN IMAGE -->
-              <img
-                src="images2/Cover.jpg"
-                alt=""
-                data-bgposition="center top"
-                data-bgfit="cover"
-                data-bgrepeat="no-repeat"
-              />
-              <!-- LAYERS -->
-
-              <div
-                class="tp-caption black_thin_34 customin tp-resizeme rs-parallaxlevel-0"
-                data-x="right"
-                data-y="250"
-                data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                data-speed="500"
-                data-start="1400"
-                data-easing="Back.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                style="
-                  z-index: 10;
-                  max-width: auto;
-                  max-height: auto;
-                  white-space: nowrap;
-                  font-size: 52px;
-                "
-              >
-                WELCOME TO
-              </div>
-
-              <div
-                class="tp-caption black_thin_34 black_thin_34_bold customin tp-resizeme rs-parallaxlevel-0"
-                data-x="right"
-                data-y="340"
-                data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                data-speed="500"
-                data-start="1400"
-                data-easing="Back.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                style="
-                  z-index: 10;
-                  max-width: auto;
-                  max-height: auto;
-                  white-space: nowrap;
-                  font-size: 52px;
-                "
-              >
-                ATLAS FOUNDRIES
-              </div>
-            </li>
-
-            <li
-              data-transition="fade"
-              data-slotamount="7"
-              data-masterspeed="500"
-              data-saveperformance="on"
-              data-title="Intro Slide"
-            >
-              <!-- MAIN IMAGE -->
-              <img
-                src="images2/about1.png"
-                alt=""
-                data-bgposition="center top"
-                data-bgfit="cover"
-                data-bgrepeat="no-repeat"
-              />
-              <!-- LAYERS -->
-
-              <div
-                class="tp-caption black_thin_34 customin tp-resizeme rs-parallaxlevel-0"
-                data-x="center"
-                data-y="250"
-                data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                data-speed="500"
-                data-start="1400"
-                data-easing="Back.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                style="
-                  z-index: 10;
-                  max-width: auto;
-                  max-height: auto;
-                  white-space: nowrap;
-                  font-size: 52px;
-                "
-              >
-                WELCOME TO
-              </div>
-
-              <div
-                class="tp-caption black_thin_34 black_thin_34_bold customin tp-resizeme rs-parallaxlevel-0"
-                data-x="center"
-                data-y="340"
-                data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                data-speed="500"
-                data-start="1400"
-                data-easing="Back.easeOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                style="
-                  z-index: 10;
-                  max-width: auto;
-                  max-height: auto;
-                  white-space: nowrap;
-                  font-size: 52px;
-                "
-              >
-                ATLAS FOUNDRIES
-              </div>
-            </li>
-          </ul>
-          <div class="tp-bannertimer"></div>
-        </div>
-      </div>
 
       <!--End Banner-->
 
-      <!--Start Content-->
-      <div class="content">
-        <!--Start Services-->
-        <div class="services-two">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <h5>OUR MOTO</h5>
-                <p style="font-size: 30px; justify-content: center;">“Casting solutions through Lost Foam Process for all your engineered casting requirements” “Location - Kolkata, Howrah”</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--End Services-->
-
-        <!--Start Services Three-->
-        <div class="services-three">
-          <div class="serv-sec">
-            <h3>Our Dedication</h3>
-            <p>
-                “Casting solutions through Lost Foam Process for all your engineered casting requirements”. Know more about us to work with us. 
-            </p>
-            <a href="about-us.html">learn more</a>
-          </div>
-
-          <div class="serv-sec serv-sec2">
-            <h3>Products</h3>
-            <p>
-                Our focus is on substitution of products that are currently being produced through casting process to save costs without any compromise on the quality
-            </p>
-            <a href="shop.html">Purchase now</a>
-          </div>
-
-          <div class="serv-sec serv-sec3">
-            <h3>Our Infrastructure</h3>
-            <p>
-                We have the best Infrastructure.  A covered shed area of 12000 sqft and a land bank of almost 100,000 sqft for future use.
-            </p>
-            <a href="about-us2.html">learn more</a>
-          </div>
-        </div>
-        <div class="clear"></div>
-        <!--End Services Three-->
-
-        </div>
-
-<footer id="footer" class="footer">
-
-    <div class="footer-content position-relative">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-info">
-              <h3>Atlas Foundries</h3>
-              <p>
-Office – 225/2 CIT Road, Scheme VII M, Kolkata - 700054<br>
-Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Howrah - 711410.<br>
-
-<strong>Phone:</strong> +91 98307 35480<br>
-                <strong>Email:</strong> enquiry@atlasfoundries.com<br>
-              </p>
-             </div>
-          </div><!-- End footer info column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="gallery-simple-two.html">Products</a></li>
-          <li><a href="news-single.html">Quality</a></li>
-          <li><a href="procedures.html">Infrastructure</a></li>
-	  <li><a href="team-members2.html">Lost Foam Manufacturing</a></li>
-          <li><a href="contact-us2.html">Contact</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          </div>
-      </div>
-    </div>
-
-    <div class="footer-legal text-center position-relative">
-      <div class="container">
-        <div class="copyright">
-          <p></p>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
-        
-        </div>
-      </div>
-    </div>
-
-    
-
-  </footer>
 
         </div>
       </div>
@@ -738,10 +748,6 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
 
 
     <script type="text/javascript" src="js/jquery.js"></script>
-
-    <!-- SMOOTH SCROLL -->
-    <script type="text/javascript" src="js/scroll-desktop.js"></script>
-    <script type="text/javascript" src="js/scroll-desktop-smooth.js"></script>
 
     <!-- START REVOLUTION SLIDER -->
     <script
@@ -851,5 +857,54 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
       }); //ready
     </script>
     <script src="js/switcher.js"></script>
+    <script>
+(function () {
+    const images = [
+        "images2/2.jpg",
+        "images2/3.jpg",
+        "images2/Cover.jpg",
+        "images2/about1.png"
+    ];
+
+    let index = 0;
+    let showingFirst = true;
+    const hero = document.querySelector(".hero");
+
+    // set initial images
+    hero.style.setProperty("--img1", `url(${images[0]})`);
+    hero.style.setProperty("--img2", `url(${images[1]})`);
+
+    hero.style.setProperty("--before-bg", `url(${images[0]})`);
+    hero.style.setProperty("--after-bg", `url(${images[1]})`);
+
+    hero.style.setProperty("--opacity-before", 1);
+    hero.style.setProperty("--opacity-after", 0);
+
+    function updateBackground() {
+        index = (index + 1) % images.length;
+
+        if (showingFirst) {
+            hero.style.setProperty("--after-bg", `url(${images[index]})`);
+            hero.style.setProperty("--opacity-after", 1);
+            hero.style.setProperty("--opacity-before", 0);
+        } else {
+            hero.style.setProperty("--before-bg", `url(${images[index]})`);
+            hero.style.setProperty("--opacity-before", 1);
+            hero.style.setProperty("--opacity-after", 0);
+        }
+
+        showingFirst = !showingFirst;
+    }
+
+    // manual arrows
+    document.querySelector(".hero-arrow.right").onclick = updateBackground;
+    document.querySelector(".hero-arrow.left").onclick = updateBackground;
+
+    // auto change (slow)
+    setInterval(updateBackground, 2000);
+})();
+</script>
+
+
   </body>
 </html>

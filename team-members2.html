@@ -85,11 +85,11 @@
 }
 
 .menu ul li a:hover {
-    color: #17A2B8;
+    color: #f5b000;
 }
 
 .menu ul li.active a {
-    background: #17A2B8;
+    background: #f5b000;
     color: #fff;
     padding: 10px 22px;
     border-radius: 4px;
@@ -295,6 +295,127 @@
 .footer .footer-legal .credits a {
   color: var(--color-primary);
 }
+
+/* SECTION BASE */
+.team {
+    background: #fff;
+}
+
+/* SECTION HEADER */
+.team .section-header {
+    max-width: 900px;
+    margin: 0 auto 70px auto;
+}
+
+/* HEADING STYLE */
+.team .section-header h2 {
+    position: relative;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    color: #2f2f2f;
+    margin-bottom: 30px;
+}
+
+/* YELLOW LINES LEFT & RIGHT */
+.team .section-header h2::before,
+.team .section-header h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 3px;
+    background: #f5b000;
+}
+
+.team .section-header h2::before {
+    left: -80px;
+}
+
+.team .section-header h2::after {
+    right: -80px;
+}
+
+/* PARAGRAPH / LIST TEXT */
+.team .section-header p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #4a6073;
+    margin: 0;
+}
+
+/* SPACE BETWEEN TWO BLOCKS */
+.team .container + .container {
+    margin-top: 80px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .team .section-header h2::before,
+    .team .section-header h2::after {
+        display: none;
+    }
+
+    .team .section-header h2 {
+        font-size: 28px;
+    }
+
+    .team .section-header p {
+        font-size: 16px;
+    }
+}
+
+/* INITIAL STATE (hidden lines) */
+.team .section-header h2::before,
+.team .section-header h2::after {
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 1.2s ease;
+}
+
+/* ANIMATE IN */
+.team .section-header.in-view h2::before,
+.team .section-header.in-view h2::after {
+    transform: scaleX(1);
+}
+
+/* OPTIONAL: subtle heading fade */
+.team .section-header {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.team .section-header.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* STOP SCROLL JERK / LAYOUT SHIFT */
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: auto !important;
+}
+
+/* Prevent animation from affecting layout */
+.team .section-header,
+.team .section-header * {
+    will-change: transform, opacity;
+}
+
+/* Ensure animations do NOT change height */
+.team .section-header {
+    min-height: 1px;
+}
+
+/* Kill AOS side effects (you are not using AOS JS) */
+.aos-init,
+.aos-animate {
+    transition: none !important;
+    transform: none !important;
+}
+
+
 
   </style>
   <body>
@@ -645,8 +766,8 @@
       <div class="container aos-init aos-animate" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Differences with Sand casting process</h2>
-          <p align="left">
+          <h2 >Differences with Sand casting process</h2>
+          <p align="left" style="font-size: 20px;">
 1.	No usage of cores.<br>
 2.	No additives, binders, resins etc for treating sand.<br>
 3.	No risers.<br>
@@ -658,7 +779,7 @@
       <div class="container aos-init aos-animate" data-aos="fade-up">
         <div class="section-header">
           <h2>Advantages of Lost Foam Casting process</h2>
-          <p align="left">
+          <p align="left" style="font-size: 20px;">
 1.	Outstanding results with complex/engineered castings involcing multiple cores.<br>
 2.	Excellent surface finish.<br>
 3.	Dimensionally accurate. Near net-shape castings achievable.<br>
@@ -757,8 +878,8 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
 <script type="text/javascript" src="js/jquery.js"></script>
 
 <!-- SMOOTH SCROLL -->	
-<script type="text/javascript" src="js/scroll-desktop.js"></script>
-<script type="text/javascript" src="js/scroll-desktop-smooth.js"></script>
+<!--<script type="text/javascript" src="js/scroll-desktop.js"></script>
+<script type="text/javascript" src="js/scroll-desktop-smooth.js"></script>-->
 
 <!-- START REVOLUTION SLIDER -->	
 <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
@@ -833,6 +954,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const headers = document.querySelectorAll(".team .section-header");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    requestAnimationFrame(() => {
+                        entry.target.classList.add("in-view");
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: "0px 0px -80px 0px"
+        }
+    );
+
+    headers.forEach(header => observer.observe(header));
+});
+</script>
+
 
 
 

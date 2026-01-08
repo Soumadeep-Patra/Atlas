@@ -49,6 +49,25 @@
   
 </head>
   <style>
+
+/* GLOBAL FADED BACKGROUND IMAGE */
+body {
+    position: relative;
+    background: url("images2/footer-bg.jpg") center center / cover no-repeat fixed;
+}
+
+/* FADE OVERLAY */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.92); /* fade strength */
+    z-index: -1;
+}
+
+
+
+
     .header {
     background: #fff;
     border-bottom: 1px solid #eee;
@@ -86,11 +105,11 @@
 }
 
 .menu ul li a:hover {
-    color: #17A2B8;
+    color: #f5b000;
 }
 
 .menu ul li.active a {
-    background: #17A2B8;
+    background: #f5b000;
     color: #fff;
     padding: 10px 22px;
     border-radius: 4px;
@@ -236,6 +255,122 @@
   color: var(--color-primary);
 }
 
+/* SECTION BASE */
+.atlas-split {
+    display: flex;
+    min-height: 520px;
+    background: #1f2a33;
+    color: #fff;
+}
+
+/* LEFT PANEL */
+.atlas-left {
+    width: 40%;
+    padding: 80px 60px;
+    position: relative;
+    background: linear-gradient(
+        rgba(31,42,51,0.96),
+        rgba(31,42,51,0.96)
+    ),
+    url("images2/building-bg.jpg") center/cover no-repeat;
+}
+
+.atlas-left h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.atlas-left p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e0e6eb;
+    margin-bottom: 22px;
+}
+
+.atlas-left strong {
+    color: #ffffff;
+}
+
+/* YELLOW ACCENT LINE */
+.atlas-left::after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 60px;
+    height: 3px;
+    background: #f5b000;
+}
+
+/* RIGHT IMAGE */
+.atlas-right {
+    width: 60%;
+    background: #000;
+    overflow: hidden;
+}
+
+.atlas-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .atlas-split {
+        flex-direction: column;
+    }
+
+    .atlas-left,
+    .atlas-right {
+        width: 100%;
+    }
+
+    .atlas-left {
+        padding: 60px 30px;
+    }
+
+    .atlas-right img {
+        height: 400px;
+    }
+
+    .atlas-left::after {
+        right: 20px;
+    }
+}
+
+
+
+
+
+
+/* STOP SCROLL JERK / LAYOUT SHIFT */
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: auto !important;
+}
+
+/* Prevent animation from affecting layout */
+.team .section-header,
+.team .section-header * {
+    will-change: transform, opacity;
+}
+
+/* Ensure animations do NOT change height */
+.team .section-header {
+    min-height: 1px;
+}
+
+/* Kill AOS side effects (you are not using AOS JS) */
+.aos-init,
+.aos-animate {
+    transition: none !important;
+    transform: none !important;
+}
+
+
   </style>
   <body>
     
@@ -380,160 +515,46 @@
    
    <!--End Banner-->
    
+<section class="atlas-split">
+  <div class="atlas-left">
+    <h2 style="color: #fff;">ATLAS FOUNDRIES</h2>
+
+    <p>
+      <strong>Office</strong> – 225/2 CIT Road, Scheme VII M,<br />
+      Kolkata – 700054
+    </p>
+
+    <p>
+      <strong>Works</strong> – JL No.11, Perore Road,<br />
+      Gram Basantapur, MouzaBhetkepara,<br />
+      Munsirhat, Howrah – 711410
+    </p>
+
+    <p><strong>Phone:</strong> 033 23357376</p>
+
+    <p>
+      <strong>Email:</strong> atlascatings@gmail.com<br />
+      <strong>Email:</strong> enquiry@atlasfoundries.com
+    </p>
+  </div>
+
+  <div class="atlas-right">
+    <img src="images2/Contact.jpg" alt="Atlas Foundries Team" />
+  </div>
+</section>
+
+
+
+
+
+
     
    <!--Start Content-->
-   <div class="content">
-   
-   
-  
-  <div class="contact-us">
-   		<div class="container">
-        	
-            <div class="row">
-            	<div class="col-md-12">
-				
-				<!--<div class="our-location">
-				<div class="map"><iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Envato+Pty+Ltd,+Elizabeth+Street,+Melbourne,+Victoria,+Australia&amp;aq=0&amp;oq=envato+&amp;sll=37.0625,-95.677068&amp;sspn=39.235538,86.572266&amp;ie=UTF8&amp;hq=Envato+Pty+Ltd,&amp;hnear=Elizabeth+St,+Melbourne+Victoria+3000,+Australia&amp;ll=-37.817942,144.964977&amp;spn=0.01918,0.008866&amp;t=m&amp;output=embed"></iframe></div>
-                    	<div class="get-directions">
-                        	<form action="http://maps.google.com/maps" method="get" target="_blank">
-                               <input type="text" name="saddr" placeholder="Enter Your Address" />
-                               <input type="hidden" name="daddr" value="Envato Pty Ltd, Elizabeth Street, Melbourne, Victoria, Australia" />
-                               <input type="submit" value="Get directions" class="direction-btn" />
-                            </form>
-                        </div>
-                </div>-->
-				
-				</div>
-            </div>
-            
-        </div>
-		
-		
-		<div class="leave-msg dark-back">
-			<div class="container">
-			
-			<div class="rox">
-				<div class="col-md-7">
-					
-					<div class="main-title">
-						<h2><span>We'd</span> Love to <span>Hear From You</span></h2>
-						<p>cursus lorem molestie vitae. Nulla vehicula, lacus ut suscipit fermentum, turpis felis ultricies dui, ut rhoncus libero augue. </p>
-					 </div>
-					
-					<div class="form">
-				<div class="row">
-                                    <p class="success" id="success" style="display:none;"></p>
-                                    <p class="error" id="error" style="display:none;"></p>
-                <form name="contact_form" id="contact_form" method="post" action="#" onSubmit="return false">
-					<div class="col-md-4"><input type="text" data-delay="300" placeholder="Your full name" name="contact_name" id="contact_name" class="input"></div>
-					<div class="col-md-4"><input type="text" data-delay="300" placeholder="E-mail Address" name="contact_email" id="contact_email" class="input"></div>
-					<div class="col-md-4"><input type="text" data-delay="300" placeholder="Subject" name="contact_subject" id="contact_subject" class="input"></div>
-					<div class="col-md-12"><textarea data-delay="500" class="required valid" placeholder="Message" name="message" id="message"></textarea></div>
-					<div class="col-md-3"><input name=" " type="submit" value="submit" onClick="validateContact();"></div>
-                    </form>
-                    
-				</div>
-			</div>
-
-					
-				</div>
-				
-				<div class="col-md-5">
-					
-					<div class="contact-get">
-					<div class="main-title">
-						<h2><span>GET IN</span> Touch</h2>
-						<p>cursus lorem molestie vitae. Nulla vehicula, lacus ut suscipit fermentum, turpis felis ultricies.</p>
-					 </div>
-					
-					<div class="get-in-touch">
-					<div class="detail">
-						<span><b>Phone:</b> 033 23357376</span>
-						<span><b>Email:</b> <a href="#.">atlascastings@gmail.com</a></span>
-						<span><b>Email:</b> <a href="#.">enquiry@atlasfoundries.com</a></span>
-						<span><b>Work Address:</b> JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Howrah - 711410.</span>
-                        <span><b>Office Address:</b> 225/2 CIT Road, Scheme VII M, Kolkata - 700054</span>
-					 </div>
-					 
-					 <!--<div class="social-icons">
-                        	<a href="#." class="fb"><i class="icon-euro"></i></a>
-                            <a href="#." class="tw"><i class="icon-yen"></i></a>
-                            <a href="#." class="gp"><i class="icon-google-plus"></i></a>
-                            <a href="#." class="vimeo"><i class="icon-vimeo4"></i></a>
-                     </div>-->
-					 </div>
-					 </div>
-					 
-				</div>
-				
-			</div>
-
-			</div>
-		</div>
-		
-   </div>
-  
-   
-   </div>
-   <!--End Content-->
    
    
    
    
-<footer id="footer" class="footer">
 
-    <div class="footer-content position-relative">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-info">
-              <h3>Atlas Foundries</h3>
-              <p>
-Office – 225/2 CIT Road, Scheme VII M, Kolkata - 700054<br>
-Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Howrah - 711410.<br>
-
-<strong>Phone:</strong> +91 98307 35480<br>
-                <strong>Email:</strong> enquiry@atlasfoundries.com<br>
-              </p>
-             </div>
-          </div><!-- End footer info column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="gallery-simple-two.html">Products</a></li>
-          <li><a href="news-single.html">Quality</a></li>
-          <li><a href="procedures.html">Infrastructure</a></li>
-	  <li><a href="team-members2.html">Lost Foam Manufacturing</a></li>
-          <li><a href="contact-us2.html">Contact</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          </div>
-      </div>
-    </div>
-
-    <div class="footer-legal text-center position-relative">
-      <div class="container">
-        <div class="copyright">
-          <p></p>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
-        
-        </div>
-      </div>
-    </div>
-
-    
-
-  </footer>
   <div class="footer-bottom">
           <div class="container">
             <div class="row">
@@ -555,9 +576,7 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
 
 <script type="text/javascript" src="js/jquery.js"></script>
 
-<!-- SMOOTH SCROLL -->	
-<script type="text/javascript" src="js/scroll-desktop.js"></script>
-<script type="text/javascript" src="js/scroll-desktop-smooth.js"></script>
+
 
 <!-- START REVOLUTION SLIDER -->	
 <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>

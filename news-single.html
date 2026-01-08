@@ -86,11 +86,11 @@
 }
 
 .menu ul li a:hover {
-    color: #17A2B8;
+    color:#f5b000;
 }
 
 .menu ul li.active a {
-    background: #17A2B8;
+    background:#f5b000;
     color: #fff;
     padding: 10px 22px;
     border-radius: 4px;
@@ -234,6 +234,536 @@
 .footer .footer-legal .credits a {
   color: var(--color-primary);
 }
+
+* SECTION BASE */
+.team {
+    background: #fff;
+}
+
+/* SECTION HEADER */
+.team .section-header {
+    max-width: 900px;
+    margin: 0 auto 70px auto;
+}
+
+/* HEADING STYLE */
+.team .section-header h2 {
+    position: relative;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    color: #2f2f2f;
+    margin-bottom: 30px;
+}
+
+/* YELLOW LINES LEFT & RIGHT */
+.team .section-header h2::before,
+.team .section-header h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 3px;
+    background: #f5b000;
+}
+
+.team .section-header h2::before {
+    left: -80px;
+}
+
+.team .section-header h2::after {
+    right: -80px;
+}
+
+/* PARAGRAPH / LIST TEXT */
+.team .section-header p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #4a6073;
+    margin: 0;
+}
+
+/* SPACE BETWEEN TWO BLOCKS */
+.team .container + .container {
+    margin-top: 80px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .team .section-header h2::before,
+    .team .section-header h2::after {
+        display: none;
+    }
+
+    .team .section-header h2 {
+        font-size: 28px;
+    }
+
+    .team .section-header p {
+        font-size: 16px;
+    }
+}
+
+/* INITIAL STATE (hidden lines) */
+.team .section-header h2::before,
+.team .section-header h2::after {
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 1.2s ease;
+}
+
+/* ANIMATE IN */
+.team .section-header.in-view h2::before,
+.team .section-header.in-view h2::after {
+    transform: scaleX(1);
+}
+
+/* OPTIONAL: subtle heading fade */
+.team .section-header {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.team .section-header.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CARD BASE */
+.news-masonary .news-sec {
+    background: #fff;
+    padding: 40px 30px;
+    min-height: 260px;
+    border-radius: 4px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* OUTER BORDER */
+.news-masonary .border {
+    margin-bottom: 30px;
+}
+
+/* HOVER EFFECT */
+.news-masonary .news-sec:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+/* ICON CIRCLE */
+.news-masonary .detail span {
+    display: inline-flex;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #f2f2f2;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* ICON PLACEHOLDER (you can replace with font icons later) */
+.news-masonary .detail span::after {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background: #555;
+    border-radius: 4px;
+    margin: auto;
+}
+
+/* TITLE */
+.news-masonary .detail h5 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1f2d3d;
+}
+
+/* UNDERLINE */
+.news-masonary .detail h5::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e5e5e5;
+    margin-top: 10px;
+}
+
+/* TEXT */
+.news-masonary .detail p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4a6073;
+}
+
+/* DEFAULT (GREY) */
+.news-masonary .detail span {
+    background: #f2f2f2;
+    transition: background 0.3s ease;
+}
+
+.news-masonary .detail h5::after {
+    background: #e5e5e5;
+    transition: background 0.3s ease;
+}
+
+/* HOVER = YELLOW */
+.news-masonary .border:hover .detail span {
+    background: #f5b000;
+}
+
+.news-masonary .border:hover .detail span::after {
+    background: #000;
+}
+
+.news-masonary .border:hover .detail h5::after {
+    background: #f5b000;
+}
+
+.news-masonary .border:hover h5 {
+    color: #000;
+}
+/* FORCE 3 CARDS PER ROW */
+.news-masonary .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* EACH COLUMN */
+.news-masonary .col-md-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CARD WRAPPER */
+.news-masonary .border {
+    flex: 1;
+    display: flex;
+}
+
+/* CARD */
+.news-masonary .news-sec {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 280px;   /* SAME HEIGHT FOR ALL */
+}
+@media (max-width: 991px) {
+    .news-masonary .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .news-masonary .col-md-4 {
+        width: 100%;
+    }
+}
+@media (max-width: 576px) {
+    .news-masonary .row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+/* SCROLL ANIMATION */
+.news-masonary .border {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.news-masonary .border.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* INSPECTIONS SECTION HEADER */
+.news-masonary::before {
+    content: "";
+    display: block;
+    height: 1px;
+}
+
+.news-masonary .container:first-child {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.news-masonary h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2f2f2f;
+    margin-bottom: 15px;
+}
+
+.news-masonary h2::before,
+.news-masonary h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 3px;
+    background: #f5b000;
+}
+
+.news-masonary h2::before {
+    left: -80px;
+}
+
+.news-masonary h2::after {
+    right: -80px;
+}
+
+.news-masonary .subtitle {
+    font-size: 18px;
+    color: #5a6f80;
+}
+
+/* GRID FIX */
+.news-masonary .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 991px) {
+    .news-masonary .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .news-masonary .row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.news-masonary .border {
+    background: transparent;
+}
+
+.news-masonary .news-sec {
+    background: #fff;
+    padding: 45px 35px;
+    min-height: 300px;
+    border-radius: 4px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.news-masonary .news-sec:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+.news-masonary .detail span {
+    width: 60px;
+    height: 60px;
+    background: #f2f2f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: background 0.3s ease;
+}
+.news-masonary .detail h5 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2d3d;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.news-masonary .detail h5::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e5e5e5;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.news-masonary .border:hover .detail h5::after {
+    background: #f5b000;
+}
+
+.news-masonary .border:hover .detail span {
+    background: #f5b000;
+}
+.news-masonary .detail p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a6073;
+}
+
+
+/* SECTION BASE */
+.inspections-section {
+    padding: 100px 0;
+}
+
+/* HEADER */
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-header h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2f2f2f;
+    margin-bottom: 15px;
+}
+
+.section-header h2::before,
+.section-header h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 3px;
+    background: #f5b000;
+}
+
+.section-header h2::before {
+    left: -80px;
+}
+
+.section-header h2::after {
+    right: -80px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #5a6f80;
+}
+
+/* GRID */
+.inspection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* CARD */
+.inspection-card {
+    background: #d7d2d2;
+    padding: 45px 35px;
+    min-height: 300px;
+    border-radius: 4px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.inspection-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: #eeeeee;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 25px;
+    transition: background 0.3s ease;
+}
+
+/* TITLE */
+.inspection-card h5 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2d3d;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.inspection-card h5::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e5e5e5;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+/* TEXT */
+.inspection-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a6073;
+}
+
+/* HOVER YELLOW */
+.inspection-card:hover .icon-circle {
+    background: #f5b000;
+}
+
+.inspection-card:hover h5::after {
+    background: #f5b000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .inspection-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .inspection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2::before,
+    .section-header h2::after {
+        display: none;
+    }
+}
+
+
+
+
+/* STOP SCROLL JERK / LAYOUT SHIFT */
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: auto !important;
+}
+
+/* Prevent animation from affecting layout */
+.team .section-header,
+.team .section-header * {
+    will-change: transform, opacity;
+}
+
+/* Ensure animations do NOT change height */
+.team .section-header {
+    min-height: 1px;
+}
+
+/* Kill AOS side effects (you are not using AOS JS) */
+.aos-init,
+.aos-animate {
+    transition: none !important;
+    transform: none !important;
+}
+
   </style>
   <body>
    
@@ -386,7 +916,7 @@
 				<div class="row">
 					
 					<div class="col-md-12">
-							
+
 							<div class="news-sec">
 								<img src="images2/qp.png" alt="" style="width: 45%;">
 								<div class="detail">
@@ -425,156 +955,87 @@
 								</a>
 							</div>
 
+
+<section class="inspections-section">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Inspections</h2>
+      <p class="subtitle">
+        Inspections performed at every step to ensure product meets all requisite standards.
+      </p>
+    </div>
+
+    <div class="inspection-grid">
+
+      <div class="inspection-card">
+        <span class="icon-circle">🏭</span>
+        <h5>Raw Material</h5>
+        <p>
+          Visual Inspection, Test Reports, In-House Testing to ensure required compositions
+        </p>
+      </div>
+
+      <div class="inspection-card">
+        <span class="icon-circle">📈</span>
+        <h5>Molding</h5>
+        <p>
+          Visual Inspection, Density Tester to ensure error free molds/patterns
+        </p>
+      </div>
+
+      <div class="inspection-card">
+        <span class="icon-circle">🛠️</span>
+        <h5>Assembly/Compaction</h5>
+        <p>
+          Visual Inspection, Strict Dimensional Control to ensure accurate castings in pouring
+          without shifts, breaks, etc.
+        </p>
+      </div>
+
+      <div class="inspection-card">
+        <span class="icon-circle">🔥</span>
+        <h5>Melting</h5>
+        <p>
+          Proportion checks, temperature control, composition analysis, time control to ensure
+          proper mechanical and chemical compositions
+        </p>
+      </div>
+
+      <div class="inspection-card">
+        <span class="icon-circle">🏗️</span>
+        <h5>Shakeout</h5>
+        <p>
+          Visual Inspection, Dimensional Checking, Surface Check to ensure stage 1 compliance
+          of quality parameters
+        </p>
+      </div>
+
+      <div class="inspection-card">
+        <span class="icon-circle">✅</span>
+        <h5>Fettling / Finishing</h5>
+        <p>
+          Visual Inspection, Weight Check, Paint, etc. to ensure error free dispatch
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 						<div class="news-masonary">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						
-						<div class="border"><div class="news-sec">
-							<!--<img src="images/blog/news-masonary/post-img1.jpg" alt="">-->
-							
-							<div class="detail">
-							<span></span>
-							<h5>Raw Materials</h5>
-							<p>Visual Inspection, Test Reports, In-House Testing to ensure required compositions</p>
-							
-							</div>
-							
-						</div></div>
-						
-						<div class="border"><div class="news-sec">
-							<!--<img src="images/blog/news-masonary/post-img3.jpg" alt="">-->
-							
-							<div class="detail">
-							<span></span>
-							<h5>Moulding</h5>
-							<p>Visual Inspection, Density Tester to ensure error free molds/patterns</p>
-							</div>
-							
-						</div></div>
-						
-						<div class="border"><div class="news-sec">
-							<!--<img src="images/blog/news-masonary/post-img2.jpg" alt="">-->
-							
-							<div class="detail">
-							<span>	</span>
-							<h5>Assembly/Compaction</h5>
-							<p>Visual Inspection, Strict Dimensional Control to ensure accurate castings in pouring without shifts, breaks, etc.</p>
-							</div>
-							
-						</div></div>
-						
-					</div>
-					
-					
-					<div class="col-md-4">
-						
-						<div class="border"><div class="news-sec">
-							
-							<div id="demo">
-								
-									<!--<div id="blog-slide" class="owl-carousel">
-										<img src="images/blog/news-masonary/post-img7.jpg" alt="">
-										<img src="images/blog/news-masonary/post-img6.jpg" alt="">
-										<img src="images/blog/news-masonary/post-img8.jpg" alt="">
-									</div>-->
-								
-								</div>
-							
-							
-							<div class="detail">
-							<span></span>
-							<h5>Melting</h5>
-							<p>Proportion checks, temperature control, composition analysis, time control to ensure proper mechanical and chemical compositions</p>
-							</div>
-							
-						</div></div>
-						
-						<div class="border"><div class="news-sec">
-							<!--<img src="images/blog/news-masonary/post-img5.jpg" alt="">-->
-							
-							<div class="detail">
-							<span></span>
-							<h5>Shakeout</h5>
-							<p>Visual Inspection, Dimensional Checking, Surface Check to ensure stage 1 compliance of quality parameters</p>
-							</div>
-							
-						</div></div>
-						
-						<div class="border"><div class="news-sec">
-							<!--<img src="images/blog/news-masonary/post-img6.jpg" alt="">-->
-							
-							<div class="detail">
-							<span></span>
-							<h5>Fettling / Finishing</h5>
-							<p>Visual Inspection, Weight Check, Paint, etc. to ensure error free dispatch </p>
-							</div>
-							
-						</div></div>
-						
-					</div>
-					
-					
-					
-					<div class="col-md-4">
-						
-						<!--<div class="border"><div class="news-sec">
-							<img src="images/blog/news-masonary/post-img4.jpg" alt="">
-							
-							<div class="detail">
-							<span>March 7, 2015 / By Rockal</span>
-							<h5>Standard Post Format</h5>
-							<p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspicia tis unde omnis iste natus error inventore. eleifend sed turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							<a href="news-detail.html">Read More</a>
-							</div>
-							
-						</div></div>-->
-						
-						<!--<div class="border"><div class="news-sec">
-							<img src="images/blog/news-masonary/post-img8.jpg" alt="">
-							
-							<div class="detail">
-							<span>March 7, 2015 / By Rockal</span>
-							<h5>Standard Post Format</h5>
-							<p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde condimentum tristique vel, eleifend sed turpis  Integer lorem quam adipiscing.</p>
-							<a href="news-detail.html">Read More</a>
-							</div>
-							
-						</div></div>-->
-						
-						<!--<div class="border"><div class="news-sec">
-							<img src="images/blog/news-masonary/post-img9.jpg" alt="">
-							
-							<div class="detail">
-							<span>March 7, 2015 / By Rockal</span>
-							<h5>Standard Post Format</h5>
-							<p>Etharums ser quidem rerum facilis dolores nemis omnis fugats.</p>
-							<a href="news-detail.html">Read More</a>
-							</div>
-							
-						</div></div>-->
-						
-					</div>
-					
-					
-					
-				</div>
-			</div>
-			<section id="team" class="team" style="    font-size: 32px;
-    font-weight: 700;
-    position: relative;
-    color: #2e3135;
-	display: block;
-    unicode-bidi: isolate;">
+
+
+
+
+
+      			<section id="team" class="team" style="padding: 80px 0;
+    overflow: hidden;">
       <div class="container aos-init aos-animate" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Testing Facilities</h2>
-          <p align="left">
-			<span>
-				<br>
-
-			</span>
+          <h2 >Testing Facilities</h2>
+          <p align="left" style="font-size: 20px;">
 (a)	29 channel Optical emission Spectrometer<br>
 (b)	Microscope<br>
 (c)	Portable Hardness Tester<br>
@@ -583,9 +1044,11 @@
 (f)	Sand Sieve for testing<br>
 (g)	Hydrotesting Machine<br>
 (h)	Others - Weighing scales, inside outside gauge, calipers, Ultrasonic Thickness measurement gauge, Tachometer, Vacuum Gauge, Baume meter, etc for various measurements<br>
+<br>
 </p>
         </div>
       </div>
+
     </section>
 		</div>	
 							
@@ -681,9 +1144,6 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
 
 <script type="text/javascript" src="js/jquery.js"></script>
 
-<!-- SMOOTH SCROLL -->	
-<script type="text/javascript" src="js/scroll-desktop.js"></script>
-<script type="text/javascript" src="js/scroll-desktop-smooth.js"></script>
 
 <!-- START REVOLUTION SLIDER -->	
 <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
@@ -712,5 +1172,52 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
 
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const cards = document.querySelectorAll(".news-masonary .border");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    cards.forEach(card => observer.observe(card));
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const headers = document.querySelectorAll(".team .section-header");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    requestAnimationFrame(() => {
+                        entry.target.classList.add("in-view");
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: "0px 0px -80px 0px"
+        }
+    );
+
+    headers.forEach(header => observer.observe(header));
+});
+</script>
 </body>
 </html>

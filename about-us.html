@@ -87,11 +87,11 @@
 }
 
 .menu ul li a:hover {
-    color: #17A2B8;
+    color: #f5b000;
 }
 
 .menu ul li.active a {
-    background: #17A2B8;
+    background: #f5b000;
     color: #fff;
     padding: 10px 22px;
     border-radius: 4px;
@@ -237,6 +237,29 @@
   color: var(--color-primary);
 }
 
+/* SCROLL ANIMATION BASE */
+.meet-specialists .post {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+/* ACTIVE STATE */
+.meet-specialists .post.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* STAGGER EFFECT */
+.meet-specialists .post:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.meet-specialists .post:nth-child(2) {
+    transition-delay: 0.5s;
+}
+
+
   </style>
   <body>
   
@@ -355,7 +378,6 @@
    
    <div class="sub-banner">
    
-   	<img class="banner-img" src="images2/about1.png" alt="">
     <div class="detail">
     	<div class="container">
         	<div class="row">
@@ -577,9 +599,7 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
 
 <script type="text/javascript" src="js/jquery.js"></script>
 
-<!-- SMOOTH SCROLL -->	
-<script type="text/javascript" src="js/scroll-desktop.js"></script>
-<script type="text/javascript" src="js/scroll-desktop-smooth.js"></script>
+
 
 <!-- START REVOLUTION SLIDER -->	
 <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
@@ -606,6 +626,29 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
 <!-- All Scripts -->
 <script type="text/javascript" src="js/custom.js"></script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const posts = document.querySelectorAll(".meet-specialists .post");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                    observer.unobserve(entry.target); // animate once
+                }
+            });
+        },
+        {
+            threshold: 0.2
+        }
+    );
+
+    posts.forEach(post => observer.observe(post));
+
+});
+</script>
 
 
   </body>

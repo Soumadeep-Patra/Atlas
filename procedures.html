@@ -86,11 +86,11 @@
 }
 
 .menu ul li a:hover {
-    color: #17A2B8;
+    color: #f5b000;
 }
 
 .menu ul li.active a {
-    background: #17A2B8;
+    background: #f5b000;
     color: #fff;
     padding: 10px 22px;
     border-radius: 4px;
@@ -234,6 +234,31 @@
 .footer .footer-legal .credits a {
   color: var(--color-primary);
 }
+
+/* STOP SCROLL JERK / LAYOUT SHIFT */
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: auto !important;
+}
+
+/* Prevent animation from affecting layout */
+.team .section-header,
+.team .section-header * {
+    will-change: transform, opacity;
+}
+
+/* Ensure animations do NOT change height */
+.team .section-header {
+    min-height: 1px;
+}
+
+/* Kill AOS side effects (you are not using AOS JS) */
+.aos-init,
+.aos-animate {
+    transition: none !important;
+    transform: none !important;
+}
+
 </style>
   <body>
     
@@ -521,9 +546,6 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
 
 <script type="text/javascript" src="js/jquery.js"></script>
 
-<!-- SMOOTH SCROLL -->	
-<script type="text/javascript" src="js/scroll-desktop.js"></script>
-<script type="text/javascript" src="js/scroll-desktop-smooth.js"></script>
 
 <!-- START REVOLUTION SLIDER -->	
 <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
