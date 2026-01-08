@@ -58,6 +58,195 @@
     <!--PreLoader-->
     <link href="css/loader.css" rel="stylesheet" type="text/css" />
   </head>
+
+  <style>
+    .header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #6B2C91;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #17A2B8;
+}
+
+.menu ul li.active a {
+    background: #17A2B8;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 4px;
+}
+
+@media (max-width: 991px) {
+    .menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        display: none;
+        border-top: 1px solid #eee;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .menu ul li {
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu ul li a {
+        display: block;
+        padding: 14px;
+    }
+
+}
+.footer {
+  color: #fff;
+  background: url("./images2/footer-bg.jpg") top center no-repeat;
+  background-size: cover;
+  font-size: 14px;
+  padding: 80px 0 60px 0;
+  position: relative;
+}
+
+.footer:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  inset: 0;
+}
+
+.footer .footer-content .footer-info {
+  margin-bottom: 30px;
+}
+
+.footer .footer-content .footer-info h3 {
+  font-size: 28px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer .footer-content .footer-info h3 span {
+  color: var(--color-primary);
+}
+
+.footer .footer-content .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: var(--font-primary);
+  color: #fff;
+}
+
+.footer .footer-content .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  line-height: 1;
+  margin-right: 8px;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+.footer .footer-content .social-links a:hover {
+  background: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer .footer-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-content .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-content .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-content .footer-links ul li {
+  padding: 8px 0;
+}
+
+.footer .footer-content .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-content .footer-links ul a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-content .footer-links ul a:hover {
+  color: #fff;
+}
+
+.footer .footer-legal .copyright {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer .footer-legal .credits {
+  padding-top: 4px;
+  font-size: 13px;
+  color: #fff;
+}
+
+.footer .footer-legal .credits a {
+  color: var(--color-primary);
+}
+
+  </style>
   <body>
     <div id="wrap">
       <!--Start PreLoader-->
@@ -74,53 +263,29 @@
 
       <!--Start Header-->
 
-   <header class="header">
-		<div class="container">
-   		
-   		
-        <div class="row" style="justify-content: space-between;">
-        	
-            <div class="col-md-3">
-            	<a href="index.html" class="logo" style="margin: 26px 0 0 0;  float: left; font-size: 28px; font-weight: 700; font-family: var(--font-primary); ">Atlas Foundries</a>
-            </div>
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
             
-            <div class="col-md-9">
-            	
-                
-                <nav class="menu-2">
-            	<ul class="nav wtf-menu">
-                	<li class="item-select parent"><a href="index.html">Home</a>
-					</li>
-					
-                    <li class="parent"><a href="about-us.html">About Us</a>
-					</li>
-					
-                    <li class="parent"><a href="team-members2.html">Lost Foam Manufacturing</a>
-                    </li>
-					
-                    <li><a href="procedures.html">Infrastructure</a></li>
-					
-                    <li class="parent"><a href="gallery-simple-two.html">Products</a>
-						
-					</li>
-                    
-					<li class="parent"><a href="news-single.html">Quality</a>
-					</li>
-                    
-					<li class="parent"><a href="contact-us2.html">Contact Us</a>
-					</li>
-					
-                </ul>
-                </nav>
-                	
-            </div>
-            
-        </div>
-        
-        
-		</div>	
-    </header>
+            <!-- Logo -->
+            <a href="index.html" class="logo">Atlas Foundries</a>
 
+            <!-- Navigation -->
+            <nav class="menu">
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="team-members2.html">Lost Foam Manufacturing</a></li>
+                    <li><a href="procedures.html">Infrastructure</a></li>
+                    <li><a href="gallery-simple-two.html">Products</a></li>
+                    <li><a href="news-single.html">Quality</a></li>
+                    <li><a href="contact-us2.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</header>
 
       <!--End Header-->
 
@@ -476,102 +641,101 @@
         <!--End Services Three-->
 
         </div>
+
+<footer id="footer" class="footer">
+
+    <div class="footer-content position-relative">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Atlas Foundries</h3>
+              <p>
+Office – 225/2 CIT Road, Scheme VII M, Kolkata - 700054<br>
+Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Howrah - 711410.<br>
+
+<strong>Phone:</strong> +91 98307 35480<br>
+                <strong>Email:</strong> enquiry@atlasfoundries.com<br>
+              </p>
+             </div>
+          </div><!-- End footer info column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="gallery-simple-two.html">Products</a></li>
+          <li><a href="news-single.html">Quality</a></li>
+          <li><a href="procedures.html">Infrastructure</a></li>
+	  <li><a href="team-members2.html">Lost Foam Manufacturing</a></li>
+          <li><a href="contact-us2.html">Contact</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          </div>
+      </div>
+    </div>
+
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          <p></p>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
+        
         </div>
       </div>
-      <!--End Content-->
+    </div>
 
-      <!--Start Footer-->
-      <footer class="footer-light" id="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="emergency">
-                <i class="icon-phone5"></i>
-                <span class="text">For emergency cases</span>
-                <span class="number">+91 98307 35480</span>
-                <img src="images/emergency-divider-dark.png" alt="" />
-              </div>
-            </div>
-          </div>
+    
 
-          <div class="main-footer">
-            <div class="row">
-              <div class="col-md-3">
-                <div class="useful-links">
-                  <div class="title">
-                    <h5>Medical guide</h5>
-                  </div>
+  </footer>
 
-                  <div class="detail">
-                    <ul>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="about-us.html">About Us</a></li>
-                      <li><a href="team-members2.html">Lost Foam Manufacturing</a></li>
-                      <li><a href="procedures.html">Infrastructure</a></li>
-                      <li><a href="gallery-simple-two.html">Products</a></li>
-                      <li><a href="news-single.html">Quality</a></li>
-                      <li><a href="contact-us2.html">Contact Us</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="get-touch">
-                  <div class="title">
-                    <h5>GET IN TOUCH</h5>
-                  </div>
-
-                  <div class="detail">
-                    <div class="get-touch">
-                      <span class="text"
-                        >Medical Bibendum auctor, to consequat ipsum, nec
-                        sagittis sem</span
-                      >
-
-                      <ul>
-                        <li>
-                          <i class="icon-location"></i>
-                          <span
-                            >Medical Ltd, Manhattan 1258, New York, USA
-                            Lahore</span
-                          >
-                        </li>
-                        <li>
-                          <i class="icon-phone4"></i>
-                          <span>(+1) 234 567 8901</span>
-                        </li>
-                        <li>
-                          <a href="#."
-                            ><i class="icon-dollar"></i>
-                            <span>hello@medical-guide.com</span></a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      <!--End Content-->
+  </div>
 
-        <div class="footer-bottom">
+
+
+
+
+
+  <div class="footer-bottom">
           <div class="container">
             <div class="row">
               <div class="col-md-6">
-                <span class="copyrights"
-                  >© Copyright Atlas Foundries. All Rights Reserved Designed by Dreamline Production</span>
+                <span class="copyrights">© Copyright Atlas Foundries. All Rights Reserved Designed by Dreamline Production</span>
               </div>
             </div>
           </div>
 
           <a class="back-to-top" href="#."></a>
         </div>
-      </footer>
-      <!--End Footer-->
-    </div>
 
-    <a href="#0" class="cd-top"></a>
+
+
+<a href="#0" class="cd-top"></a>
+
 
     <script type="text/javascript" src="js/jquery.js"></script>
 
