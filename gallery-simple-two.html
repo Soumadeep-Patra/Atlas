@@ -64,12 +64,78 @@
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #6B2C91;
-    text-decoration: none;
-    white-space: nowrap;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        135deg,
+        #3b0a57,
+        #6b2c91,
+        #f5b000
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+    transition: 0.4s ease;
 }
+
+/* subtle shine on hover */
+.logo:hover {
+    letter-spacing: 2px;
+}
+
+/* ===== GLOSSY DEPTH & GLOW ===== */
+.logo::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 12px;
+    background: linear-gradient(
+        120deg,
+        rgba(245,176,0,0.25),
+        rgba(107,44,145,0.25),
+        rgba(0,0,0,0)
+    );
+    filter: blur(12px);
+    opacity: 0;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.logo:hover::after {
+    opacity: 1;
+}
+/* ===== INDUSTRIAL ACCENT ===== */
+.logo span {
+    color: #f5b000;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(90deg, #f5b000, transparent);
+    transition: 0.4s ease;
+}
+
+.logo:hover::before {
+    width: 70%;
+}
+@media (max-width: 768px) {
+    .logo {
+        font-size: 22px;
+        letter-spacing: 0.8px;
+    }
+}
+
+
 
 .menu ul {
     display: flex;
@@ -260,6 +326,238 @@ html, body {
     transition: none !important;
     transform: none !important;
 }
+
+/* FORCE TRANSPARENT HEADER (DESKTOP + MOBILE) */
+.header {
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+.header {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    box-shadow: none !important;
+}
+/* OVERRIDE STICKY HEADER SCROLL EFFECT */
+.header.sticky,
+.header.fixed,
+.header.scrolled {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+#page .header {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* ===== SUB BANNER WITH IMAGE ===== */
+.sub-banner {
+    position: relative;
+    min-height: 320px;
+    background: url("images2/about1.png") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+/* Dark overlay for readability */
+.sub-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Ensure content stays above overlay */
+.sub-banner .detail {
+    position: relative;
+    z-index: 2;
+}
+.sub-banner h2 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.sub-banner .paging ul li,
+.sub-banner .paging ul li a {
+    color: rgba(255,255,255,0.85);
+}
+
+.sub-banner .paging ul li a:hover {
+    color: #f5b000;
+}
+@media (max-width: 768px) {
+    .sub-banner {
+        min-height: 240px;
+    }
+
+    .sub-banner h2 {
+        font-size: 28px;
+    }
+}
+
+/* ===== OUR PRODUCTS – PREMIUM GALLERY ===== */
+.gallery {
+    padding: 80px 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(245,176,0,0.04),
+        rgba(107,44,145,0.03)
+    );
+}
+
+/* MAIN TITLE – COOL VERSION */
+.gallery .main-title h2 {
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gallery .main-title h2 span {
+    color: #f5b000;
+}
+
+.gallery .main-title h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #f5b000;
+    margin: 14px auto 0;
+    border-radius: 4px;
+}
+
+.gallery .main-title p {
+    max-width: 900px;
+    margin: 25px auto 50px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #555;
+    text-align: center;
+}
+
+/* GRID FIX */
+.main-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 0;
+}
+
+/* PRODUCT CARD */
+.gallery-sec {
+    display: block;
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+    transition: all 0.45s ease;
+    position: relative;
+}
+
+/* IMAGE */
+.gallery-sec img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* HOVER ZOOM */
+.gallery-sec:hover img {
+    transform: scale(1.12);
+}
+
+/* DARK GRADIENT OVERLAY */
+.gallery-sec .layer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.15),
+        transparent
+    );
+    opacity: 0;
+    transition: 0.45s ease;
+}
+
+.gallery-sec:hover .layer {
+    opacity: 1;
+}
+
+/* ICON */
+.gallery-sec .layer i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    color: #fff;
+    font-size: 32px;
+    opacity: 0;
+    transition: 0.45s ease;
+}
+
+.gallery-sec:hover .layer i {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* TITLE */
+.gallery-sec .detail {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 18px;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.45s ease;
+}
+
+.gallery-sec:hover .detail {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.gallery-sec .detail h6 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.6px;
+}
+
+/* CARD HOVER LIFT */
+.gallery-sec:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .gallery-sec img {
+        height: 220px;
+    }
+
+    .gallery .main-title h2 {
+        font-size: 30px;
+    }
+
+    .gallery .main-title p {
+        font-size: 15px;
+    }
+}
+
 
 </style>
   <body>
@@ -598,6 +896,28 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
 
 <!-- All Scripts -->
 <script type="text/javascript" src="js/custom.js"></script> 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".gallery-sec");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = `${i * 100}ms`;
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(30px)";
+    observer.observe(card);
+  });
+});
+</script>
 
 <script>
 	<!-- Fancybox -->	

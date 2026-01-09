@@ -60,13 +60,79 @@
     padding: 15px 0;
 }
 
+/* ===== PREMIUM LOGO STYLE ===== */
 .logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #6B2C91;
-    text-decoration: none;
-    white-space: nowrap;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        135deg,
+        #3b0a57,
+        #6b2c91,
+        #f5b000
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+    transition: 0.4s ease;
 }
+
+/* subtle shine on hover */
+.logo:hover {
+    letter-spacing: 2px;
+}
+
+/* ===== GLOSSY DEPTH & GLOW ===== */
+.logo::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 12px;
+    background: linear-gradient(
+        120deg,
+        rgba(245,176,0,0.25),
+        rgba(107,44,145,0.25),
+        rgba(0,0,0,0)
+    );
+    filter: blur(12px);
+    opacity: 0;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.logo:hover::after {
+    opacity: 1;
+}
+/* ===== INDUSTRIAL ACCENT ===== */
+.logo span {
+    color: #f5b000;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(90deg, #f5b000, transparent);
+    transition: 0.4s ease;
+}
+
+.logo:hover::before {
+    width: 70%;
+}
+@media (max-width: 768px) {
+    .logo {
+        font-size: 22px;
+        letter-spacing: 0.8px;
+    }
+}
+
 
 .menu ul {
     display: flex;
@@ -414,7 +480,284 @@ html, body {
     transition: none !important;
     transform: none !important;
 }
+/* FORCE TRANSPARENT HEADER (DESKTOP + MOBILE) */
+.header {
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+.header {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    box-shadow: none !important;
+}
+/* OVERRIDE STICKY HEADER SCROLL EFFECT */
+.header.sticky,
+.header.fixed,
+.header.scrolled {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+#page .header {
+    background: transparent !important;
+    box-shadow: none !important;
+}
 
+/* ===== SUB BANNER WITH IMAGE ===== */
+.sub-banner {
+    position: relative;
+    min-height: 320px;
+    background: url("images2/about1.png") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+/* Dark overlay for readability */
+.sub-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Ensure content stays above overlay */
+.sub-banner .detail {
+    position: relative;
+    z-index: 2;
+}
+.sub-banner h2 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.sub-banner .paging ul li,
+.sub-banner .paging ul li a {
+    color: rgba(255,255,255,0.85);
+}
+
+.sub-banner .paging ul li a:hover {
+    color: #f5b000;
+}
+@media (max-width: 768px) {
+    .sub-banner {
+        min-height: 240px;
+    }
+
+    .sub-banner h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* ===== REMOVE OWL CAROUSEL ARROWS ===== */
+.owl-nav,
+.owl-prev,
+.owl-next {
+    display: none !important;
+}
+.owl-dots {
+    display: none !important;
+}
+
+/* ===== FORCE MOBILE STACKING FOR PROCESS STEPS ===== */
+@media (max-width: 768px) {
+
+    /* override grid / flex completely */
+    .process-steps ul.steps {
+        display: block !important;
+        grid-template-columns: none !important;
+        overflow: visible !important;
+    }
+
+    .process-steps ul.steps li {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 16px;
+        padding: 14px 12px 14px 18px;
+
+        font-size: 16px;
+        text-align: left;
+        white-space: normal;
+
+        border-left: 4px solid #e0e0e0;
+        background: #fff;
+        border-radius: 6px;
+
+        transition: all 0.3s ease;
+    }
+
+    /* remove underline bar */
+    .process-steps ul.steps li::after {
+        display: none !important;
+    }
+
+    /* active step */
+    .process-steps ul.steps li.active {
+        border-left-color: #f5b000;
+        background: rgba(245,176,0,0.08);
+        color: #f5b000;
+        font-weight: 600;
+    }
+}
+
+/* ===== ULTRA COOL MAIN TITLE ===== */
+.main-title {
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.9s ease;
+}
+
+/* show on scroll */
+.main-title.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* small top label */
+.main-title h2 span {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f5b000;
+    margin-bottom: 12px;
+}
+
+/* main heading */
+.main-title h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #1e1e1e;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+/* animated underline */
+.main-title h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #f5b000, #6b2c91);
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+/* hover expand underline */
+.main-title:hover h2::after {
+    width: 130px;
+}
+
+/* description text */
+.main-title p {
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* subtle glow */
+.main-title::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(
+        circle,
+        rgba(245,176,0,0.12),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.main-title:hover::before {
+    opacity: 1;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .main-title h2 {
+        font-size: 30px;
+    }
+
+    .main-title p {
+        font-size: 15px;
+    }
+}
+
+/* ===== COOL PROCESS TITLE ===== */
+.process-title {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #222;
+    margin-bottom: 30px;
+    padding-left: 18px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+/* gold vertical accent */
+.process-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 5px;
+    height: 70%;
+    background: linear-gradient(180deg, #f5b000, #6b2c91);
+    border-radius: 6px;
+}
+
+/* subtle underline */
+.process-title::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    bottom: -8px;
+    width: 55px;
+    height: 3px;
+    background: #f5b000;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+/* hover effect */
+.process-title:hover::after {
+    width: 120px;
+}
+
+/* reveal animation */
+.process-title.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .process-title {
+        font-size: 18px;
+    }
+}
 
 
   </style>
@@ -576,7 +919,7 @@ html, body {
 				</div>
 
 				<section class="process-steps">
-    <p class="process-title">The Process has following steps:</p>
+    <p class="process-title" style="font-size: 20px; font-weight: 700; letter-spacing: 1px; color: #222; margin-bottom: 30px; padding-left: 18px;">The Process has following steps:</p>
 
 <ul class="steps">
     <li class="active" data-step="0">EPS Beads Pre-forming</li>
@@ -593,7 +936,7 @@ html, body {
 				<div class="row">
 				
 				<div >
-				<div id="team-detail" class="owl-carousel">
+				<div id="team-detail" >
 				
 					<div class="post item" data-step="0">
 						
@@ -954,6 +1297,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const processTitle = document.querySelector(".process-title");
+  if (!processTitle) return;
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          processTitle.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  observer.observe(processTitle);
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const titles = document.querySelectorAll(".main-title");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
+
+  titles.forEach(title => observer.observe(title));
+});
+</script>
+
+
+
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 

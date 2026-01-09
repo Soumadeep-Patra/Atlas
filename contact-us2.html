@@ -370,6 +370,148 @@ html, body {
     transform: none !important;
 }
 
+/* FORCE TRANSPARENT HEADER (DESKTOP + MOBILE) */
+.header {
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+.header {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    box-shadow: none !important;
+}
+/* OVERRIDE STICKY HEADER SCROLL EFFECT */
+.header.sticky,
+.header.fixed,
+.header.scrolled {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+#page .header {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* ===== SUB BANNER WITH IMAGE ===== */
+.sub-banner {
+    position: relative;
+    min-height: 320px;
+    background: url("images2/about1.png") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+/* Dark overlay for readability */
+.sub-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Ensure content stays above overlay */
+.sub-banner .detail {
+    position: relative;
+    z-index: 2;
+}
+.sub-banner h2 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.sub-banner .paging ul li,
+.sub-banner .paging ul li a {
+    color: rgba(255,255,255,0.85);
+}
+
+.sub-banner .paging ul li a:hover {
+    color: #f5b000;
+}
+@media (max-width: 768px) {
+    .sub-banner {
+        min-height: 240px;
+    }
+
+    .sub-banner h2 {
+        font-size: 28px;
+    }
+}
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        135deg,
+        #3b0a57,
+        #6b2c91,
+        #f5b000
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+    transition: 0.4s ease;
+}
+
+/* subtle shine on hover */
+.logo:hover {
+    letter-spacing: 2px;
+}
+
+/* ===== GLOSSY DEPTH & GLOW ===== */
+.logo::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 12px;
+    background: linear-gradient(
+        120deg,
+        rgba(245,176,0,0.25),
+        rgba(107,44,145,0.25),
+        rgba(0,0,0,0)
+    );
+    filter: blur(12px);
+    opacity: 0;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.logo:hover::after {
+    opacity: 1;
+}
+/* ===== INDUSTRIAL ACCENT ===== */
+.logo span {
+    color: #f5b000;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(90deg, #f5b000, transparent);
+    transition: 0.4s ease;
+}
+
+.logo:hover::before {
+    width: 70%;
+}
+@media (max-width: 768px) {
+    .logo {
+        font-size: 22px;
+        letter-spacing: 0.8px;
+    }
+}
+
 
   </style>
   <body>

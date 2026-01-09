@@ -62,13 +62,80 @@
     padding: 15px 0;
 }
 
+/* ===== PREMIUM LOGO STYLE ===== */
 .logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #6B2C91;
-    text-decoration: none;
-    white-space: nowrap;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        135deg,
+        #3b0a57,
+        #6b2c91,
+        #f5b000
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+    transition: 0.4s ease;
 }
+
+/* subtle shine on hover */
+.logo:hover {
+    letter-spacing: 2px;
+}
+
+/* ===== GLOSSY DEPTH & GLOW ===== */
+.logo::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 12px;
+    background: linear-gradient(
+        120deg,
+        rgba(245,176,0,0.25),
+        rgba(107,44,145,0.25),
+        rgba(0,0,0,0)
+    );
+    filter: blur(12px);
+    opacity: 0;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.logo:hover::after {
+    opacity: 1;
+}
+/* ===== INDUSTRIAL ACCENT ===== */
+.logo span {
+    color: #f5b000;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(90deg, #f5b000, transparent);
+    transition: 0.4s ease;
+}
+
+.logo:hover::before {
+    width: 70%;
+}
+@media (max-width: 768px) {
+    .logo {
+        font-size: 22px;
+        letter-spacing: 0.8px;
+    }
+}
+
+
 
 .menu ul {
     display: flex;
@@ -260,6 +327,270 @@
 }
 
 
+
+
+/* FORCE TRANSPARENT HEADER (DESKTOP + MOBILE) */
+.header {
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+.header {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    box-shadow: none !important;
+}
+/* OVERRIDE STICKY HEADER SCROLL EFFECT */
+.header.sticky,
+.header.fixed,
+.header.scrolled {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+#page .header {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* ===== SUB BANNER WITH IMAGE ===== */
+.sub-banner {
+    position: relative;
+    min-height: 320px;
+    background: url("images2/about1.png") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+/* Dark overlay for readability */
+.sub-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Ensure content stays above overlay */
+.sub-banner .detail {
+    position: relative;
+    z-index: 2;
+}
+.sub-banner h2 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.sub-banner .paging ul li,
+.sub-banner .paging ul li a {
+    color: rgba(255,255,255,0.85);
+}
+
+.sub-banner .paging ul li a:hover {
+    color: #f5b000;
+}
+@media (max-width: 768px) {
+    .sub-banner {
+        min-height: 240px;
+    }
+
+    .sub-banner h2 {
+        font-size: 28px;
+    }
+}
+
+/* ===== GLASS VISION / MISSION SECTION ===== */
+.vm-glass-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin: 90px 0;
+}
+
+/* Glass Card */
+.vm-glass-card {
+    position: relative;
+    padding: 50px 40px;
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.15),
+        inset 0 1px 1px rgba(255,255,255,0.4);
+
+    transition: all 0.45s ease;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* Glow effect */
+.vm-glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(245,176,0,0.25),
+        transparent,
+        rgba(107,44,145,0.25)
+    );
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+/* Hover */
+.vm-glass-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 30px 70px rgba(245,176,0,0.25);
+}
+
+.vm-glass-card:hover::before {
+    opacity: 1;
+}
+
+/* Icon */
+.vm-glass-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(245,176,0,0.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 36px;
+    margin-bottom: 25px;
+
+    transition: 0.4s ease;
+}
+
+/* Icon animation */
+.vm-glass-card:hover .vm-glass-icon {
+    transform: rotate(8deg) scale(1.15);
+    background: #f5b000;
+}
+
+/* Title */
+.vm-glass-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #111;
+}
+
+/* Text */
+.vm-glass-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* ===== SCROLL REVEAL ===== */
+.vm-glass-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay second card */
+.vm-glass-card.delay {
+    transition-delay: 0.2s;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .vm-glass-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .vm-glass-card {
+        padding: 40px 30px;
+    }
+}
+
+/* ===== COOL MAIN TITLE ===== */
+.main-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+/* Small accent text (span) */
+.main-title h2 span {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f5b000;
+    margin-bottom: 10px;
+}
+
+/* Main heading */
+.main-title h2 {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1f1f1f;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 18px;
+}
+
+/* Animated underline */
+.main-title h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        #f5b000,
+        #6b2c91
+    );
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+/* Expand underline on hover */
+.main-title:hover h2::after {
+    width: 120px;
+}
+
+/* Description text */
+.main-title p {
+    font-size: 16px;
+    color: #555;
+    max-width: 720px;
+    margin: 18px auto 0;
+    line-height: 1.7;
+}
+
+/* ===== SUBTLE FADE-UP ANIMATION ===== */
+.main-title {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.9s ease;
+}
+
+.main-title.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
   </style>
   <body>
   
@@ -413,8 +744,8 @@
             <div class="row">
             <div class="col-md-12">
                 <div class="main-title">
-                    <h2><span>Welcome to</span> Atlas Foundries</h2>
-                    <p>We can cater to all types of requirements of engineered castings for any industry.</p>
+                    <h2><span style="font-size: 35px;">Welcome to</span> Atlas Foundries</h2>
+                    <p style="font-size: 30px;">We can cater to all types of requirements of engineered castings for any industry.</p>
                 </div>
             </div>
             </div>
@@ -443,68 +774,52 @@
    <!--End Welcome-->
    
    <!--Start Specialists-->
-   <div class="meet-specialists">
+   <div class="meet-specialists" style="background-color: #e3e0e0;">
    		<div class="container">
         	
             
 			<div class="row">
 	        <div class="col-md-12">
             <div class="main-title">
-                <h2><span>Who are</span> We</h2>
-                <p>Know more about Us</p>
+                <h2><span></span>Who are We</h2>
+                <p style="font-size: 25px;">Know more about Us</p>
             </div>
             </div>
             </div>
+            <div class="vm-glass-section">
+  <div class="vm-glass-card reveal">
+    <div class="vm-glass-icon">
+      👁️
+    </div>
+    <h3>Vision</h3>
+    <p>
+      “To be a pioneer in the casting industry by sustainably and profitably
+      establishing latest production methodologies through continuous research,
+      development, value addition and adoption of best practices.”
+    </p>
+  </div>
+
+  <div class="vm-glass-card reveal delay">
+    <div class="vm-glass-icon">
+      🎯
+    </div>
+    <h3>Mission</h3>
+    <p>
+      “To bring a change in the engineered castings market through better
+      technology, improved quality, lower costs and reduced impact on the
+      environment by adoption of green technologies.”
+    </p>
+  </div>
+</div>
+
             
-            <div id="demo">
-        <div class="container">
-			<div class="row">
-            	<div class="span12">
 
-              <div id="owl-demo4" class="owl-carousel">
-			  
-                <div class="post item">
-						
-						<div class="gallery-sec">		
-                        	<div class="image-hover img-layer-slide-left-right">
-							<img src="images2/quality1.jpg" alt="">
-                            </div>
-                        </div>
-							
-                    <div class="detail">
-                    	<h6>Vision</h6>
-                        <span></span>
-                        <p>“To be a pioneer in the casting industry by sustainably and profitably establishing latest production methodologies through continuous research, development, value addition and adoption of best practices.”</p>
-                    </div>
-                    
-                </div>
-                <div class="post item">
-                	
-					<div class="gallery-sec">		
-                        	<div class="image-hover img-layer-slide-left-right">
-							<img src="images2/quality2.jpg" alt="">
-                            </div>
-                        </div>
-						
-                    <div class="detail">
-                    	<h6>Mission</h6>
-                        <span></span>
-                        <p>“To bring a change in the engineered castings market through better technology, improved quality, lower costs and reduced impact on the environment by adoption of green technologies.”</p>
-                    </div>
-                    
-                </div>
-
-                </div>
-				</div>
-            </div>
-            </div>
-			</div>
         </div>
    </div>
    <!--End Specialists-->
    
    <!--Start Services Four-->
-   <div class="services-four-dark">
+   <div class="services-four-dark" >
    		<div class="container">
         	
             <div class="row">
@@ -625,6 +940,45 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
 
 <!-- All Scripts -->
 <script type="text/javascript" src="js/custom.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".vm-glass-card");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
+
+  cards.forEach(card => observer.observe(card));
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const titles = document.querySelectorAll(".main-title");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  titles.forEach(title => observer.observe(title));
+});
+</script>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
