@@ -8,11 +8,11 @@ $("#menu").mmenu({
 },
 "footer": {
 "add": true,
-"title": "Copyrights 2015 Medical Guide. all rights reserved."
+"title": "© Copyright Atlas Foundries. All Rights Reserved Designed by Dreamline Production"
 },
 
 "header": {
-"title": "Medical Guide",
+"title": "Atlas Foundries",
 "add": true,
 "update": true
 },

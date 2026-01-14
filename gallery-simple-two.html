@@ -559,6 +559,255 @@ html, body {
 }
 
 
+
+/* ===== LUXURY: 1 PRODUCT PER ROW ===== */
+
+/* Force full width cards */
+.main-gallery .col-md-6 {
+    width: 100%;
+}
+
+/* Bigger hero-style image */
+.gallery-sec img {
+    height: 480px;
+}
+
+/* Extra spacing between products */
+.main-gallery {
+    gap: 60px 0;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .gallery-sec img {
+        height: 360px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .gallery-sec img {
+        height: 260px;
+    }
+}
+/* ===== FIX TITLE – ALWAYS VISIBLE ===== */
+
+/* Remove animation */
+.gallery-sec .detail {
+    opacity: 1 !important;
+    transform: none !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.35),
+        transparent
+    );
+
+    padding: 22px;
+    text-align: center;
+}
+
+/* Title style */
+.gallery-sec .detail h6 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.6px;
+}
+
+/* Disable hover movement */
+.gallery-sec:hover .detail {
+    transform: none;
+}
+
+/* Disable title animation effects */
+.gallery-sec:hover .detail h6 {
+    transform: none;
+}
+
+
+
+/* ================= POST CARD ================= */
+.product-card {
+  max-width: 900px;
+  margin: auto;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 45px 90px rgba(0,0,0,0.35);
+}
+
+/* IMAGE */
+.product-card img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
+}
+
+/* TITLE BAR */
+.product-title {
+  background: linear-gradient(135deg, #0bb1c8, #07889b);
+  padding: 22px;
+  text-align: center;
+}
+
+.product-title h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+/* ================= MODAL ================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* MODAL CONTENT */
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 18px;
+  overflow: hidden;
+  animation: zoomIn 0.5s ease forwards;
+}
+
+.modal-content img {
+  width: 80%;
+  display: block;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .product-card img {
+    height: 500px;
+  }
+
+  .product-title h3 {
+    font-size: 20px;
+  }
+}
+
+.product-grid {
+  display: flex;
+  flex-direction: column; /* 1 per row (luxury look) */
+  gap: 60px;              /* 🔥 SPACE BETWEEN CARDS */
+}
+.product-card {
+  margin-bottom: 60px;
+}
+
+.product-card img {
+  object-fit: contain;          /* NO CUTTING */
+  background: #f4f4f4;          /* clean industrial bg */
+}
+
+
+
+/* MODAL CONTENT */
+.modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+/* MODAL IMAGE – NEVER CUT */
+.modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;   /* 🔥 MOST IMPORTANT */
+}
+.modal-content {
+  background: #111;
+}
+
+.modal-content img {
+  background: #111;
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+
 </style>
   <body>
     
@@ -713,76 +962,61 @@ html, body {
             </div>
             </div>
             </div>
+
+
+
+
+<div class="product-grid">
+
+  <div class="product-card" onclick="openModal('images2/Axle_Box_Hosuing.jpg')">
+    <img src="images2/Axle_Box_Hosuing.jpg" alt="Axle Box Housing">
+    <div class="product-title">
+      <h3>Axle Box Housing</h3>
+    </div>
+  </div>
+
+  <div class="product-card" onclick="openModal('images2/Cover.jpg')">
+    <img src="images2/Cover.jpg" alt="Cover">
+    <div class="product-title">
+      <h3>Cover</h3>
+    </div>
+  </div>
+
+  <div class="product-card" onclick="openModal('images2/DE_Frame.jpg')">
+    <img src="images2/DE_Frame.jpg" alt="DE Frame">
+    <div class="product-title">
+      <h3>DE Frame</h3>
+    </div>
+  </div>
+
+  <div class="product-card" onclick="openModal('images2/Front_Axle_Bracket.jpg')">
+    <img src="images2/Front_Axle_Bracket.jpg" alt="Front Axle Bracket">
+    <div class="product-title">
+      <h3>Front Axle Bracket</h3>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- MODAL -->
+<div class="modal" id="imageModal">
+  <span class="close-btn" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <img id="modalImage" src="" alt="">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
             
-			<div class="row">
-				<div class="main-gallery">
-					
-					<div class="col-md-6">
-						<a class="gallery-sec fancybox photo-icon" href="images2/Axle_Box_Hosuing.jpg" data-fancybox-group="gallery">		
-                        	<div class="image-hover img-layer-slide-left-right">
-							<img src="images2/Axle_Box_Hosuing.jpg" alt="">
-                            <div class="layer"> <i class="icon-image2"></i> </div>
-                            </div>
-                            
-							<div class="detail">
-								<h6>Axle Box Hosuing</h6>
-								
-							</div>
-						</a>
-					</div>
-                    
-					
-					<div class="col-md-6">
-						<a class="gallery-sec fancybox photo-icon" href="images2/Cover.jpg" data-fancybox-group="gallery">
-                        	<div class="image-hover img-layer-slide-left-right">
-							<img src="images2/Cover.jpg" alt="">
-                            <div class="layer"> <i class="icon-image2"></i> </div>
-                            </div>
-                            
-							<div class="detail">
-								<h6>Cover</h6>
-								
-							</div>
-						</a>
-					</div>
-					
-					
-					<div class="col-md-6">
-						<a class="gallery-sec fancybox photo-icon" href="images2/DE_Frame.jpg" data-fancybox-group="gallery">		
-                        	<div class="image-hover img-layer-slide-left-right">
-							<img src="images2/DE_Frame.jpg" alt="">
-                            <div class="layer"> <i class="icon-image2"></i> </div>
-                            </div>
-                            
-							<div class="detail">
-								<h6>DE Frame</h6>
-								
-							</div>
-						</a>
-					</div>
-					
-					
-					
-					<div class="col-md-6">
-						<a class="gallery-sec fancybox photo-icon" href="images2/Front_Axle_Bracket.jpg" data-fancybox-group="gallery" >		
-                        	<div class="image-hover img-layer-slide-left-right">
-							<img src="images2/Front_Axle_Bracket.jpg" alt="">
-                            <div class="layer"> <i class="icon-image2"></i> </div>
-                            </div>
-                            
-							<div class="detail">
-								<h6>Front Axle Bracket</h6>
-								
-							</div>
-						</a>
-					</div>
-					
-					
-					
-					
-					
-				</div>
-			</div>
+
             
             
         </div>
@@ -941,6 +1175,25 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 			});
 </script>
+<script>
+function openModal(imageSrc) {
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+
+  modalImage.src = imageSrc;
+  modal.classList.add("active");
+}
+
+function closeModal() {
+  document.getElementById("imageModal").classList.remove("active");
+}
+
+/* Close on outside click */
+document.getElementById("imageModal").addEventListener("click", function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+
 
 </body>
 </html>
