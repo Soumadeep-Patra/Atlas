@@ -358,7 +358,7 @@
 .sub-banner {
     position: relative;
     min-height: 320px;
-    background: url("images2/about1.png") center center / cover no-repeat;
+    background: url("images2/12.png") center center / cover no-repeat;
     display: flex;
     align-items: center;
 }
@@ -591,22 +591,128 @@
 
 
 
+
+/* ===============================
+   SMOOTH PREMIUM PRELOADER
+================================ */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #fffcfc, #ffffff);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* Wrapper */
+.loader-wrap {
+  text-align: center;
+}
+
+/* TEXT */
+.loader-text {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.loader-text .atlas {
+  color: #6b2c91;
+  animation: textFloat 2.8s ease-in-out infinite;
+}
+
+.loader-text .foundries {
+  color: #f5b000;
+  animation: textFloat 2.8s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+/* FLOATING TEXT */
+@keyframes textFloat {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+/* LOADING BAR */
+.loader-bar {
+  width: 260px;
+  height: 5px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* BAR ANIMATION */
+.loader-bar span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(245,176,0,0.9),
+    rgba(107,44,145,0.9),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: smoothLoad 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* SMOOTH BAR MOTION */
+@keyframes smoothLoad {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+/* FADE OUT */
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+
   </style>
   <body>
   
   <div id="wrap">
    
-   <!--Start PreLoader-->
-   <div id="preloader">
-		<div id="status">&nbsp;</div>
-		<div class="loader">
-			<h1>Loading...</h1>
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-	</div>
-	<!--End PreLoader-->
+  <!-- PRELOADER -->
+<div id="preloader">
+  <div class="loader-wrap">
+    <div class="loader-text">
+      <span class="atlas">ATLAS</span>
+      <span class="foundries">FOUNDRIES</span>
+    </div>
+    <div class="loader-bar">
+      <span></span>
+    </div>
+  </div>
+</div>
+
 
 	
   
@@ -650,11 +756,11 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li class="active"><a href="about-us.html">About Us</a></li>
-                    <li><a href="team-members2.html">Lost Foam Manufacturing</a></li>
-                    <li><a href="procedures.html">Infrastructure</a></li>
-                    <li><a href="gallery-simple-two.html">Products</a></li>
-                    <li><a href="news-single.html">Quality</a></li>
-                    <li><a href="contact-us2.html">Contact Us</a></li>
+                    <li><a href="lost-foam-manufacturing.html">Lost Foam Manufacturing</a></li>
+                    <li><a href="infrastructure.html">Infrastructure</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="quality.html">Quality</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
                 </ul>
             </nav>
 
@@ -679,20 +785,20 @@
                     </li>
 					<li class="select"><a href="about-us.html">About us</a>
                     </li>
-                    <li><a href="team-members2.html">Lost Foam Manufacturing</a>
+                    <li><a href="lost-foam-manufacturing.html">Lost Foam Manufacturing</a>
                     </li>
                     
-                    <li><a href="procedures.html">Infrastructure</a></li>
+                    <li><a href="infrastructure.html">Infrastructure</a></li>
 					
-					<li><a href="gallery-simple-two.html">Products</a>
+					<li><a href="products.html">Products</a>
 						
                     </li>
                     
                     
-                    <li><a href="news-single.html">Quality</a>
+                    <li><a href="quality.html">Quality</a>
                     </li>
-					
-					<li><a href="contact-us2.html">Contact Us</a>
+
+					<li><a href="contact-us.html">Contact Us</a>
                     </li>
 					
 				</ul>
@@ -754,7 +860,7 @@
             	<div class="row">
                 	
                     <div class="col-md-5">
-                    	<img src="images2/about1.png" alt="">
+                    	<img src="images2/12.png" alt="">
                     </div>
                     
                     <div class="col-md-7">
@@ -863,11 +969,11 @@ Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Ho
             <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about-us.html">About Us</a></li>
-          <li><a href="gallery-simple-two.html">Products</a></li>
-          <li><a href="news-single.html">Quality</a></li>
-          <li><a href="procedures.html">Infrastructure</a></li>
-	  <li><a href="team-members2.html">Lost Foam Manufacturing</a></li>
-          <li><a href="contact-us2.html">Contact</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="quality.html">Quality</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+	  <li><a href="lost-foam-manufacturing.html">Lost Foam Manufacturing</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
             </ul>
           </div><!-- End footer links column-->
 
@@ -1003,6 +1109,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+<script>
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+
+  setTimeout(() => {
+    preloader.classList.add("fade-out");
+  }, 900); // slightly delayed for smooth exit
+});
+</script>
+
 
 
   </body>

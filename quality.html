@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Atlas Foundries</title>
+    <meta name="keywords" content="">
+	<meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	
+    <!--main file-->
+	<link href="css/medical-guide.css" rel="stylesheet" type="text/css">
+    
+    <!--Medical Guide Icons-->
+	<link href="fonts/medical-guide-icons.css" rel="stylesheet" type="text/css">
+    
+	<!-- Default Color-->
+	<link href="css/default-color.css" rel="stylesheet" id="color"  type="text/css">
+
+    <!--bootstrap-->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    
+    <!--Dropmenu-->
+	<link href="css/dropmenu.css" rel="stylesheet" type="text/css">
+    
+	<!--Sticky Header-->
+	<link href="css/sticky-header.css" rel="stylesheet" type="text/css">
+	
+	<!--revolution-->
+	<link href="css/style.css" rel="stylesheet" type="text/css">    
+    <link href="css/settings.css" rel="stylesheet" type="text/css">    
+    <link href="css/extralayers.css" rel="stylesheet" type="text/css">    
+   
+    <!--Accordion-->
+    <link href="css/accordion.css" rel="stylesheet" type="text/css">
+     
+    <!--tabs-->
+	<link href="css/tabs.css" rel="stylesheet" type="text/css">    
+   
+    <!--Owl Carousel-->
+	<link href="css/owl.carousel.css" rel="stylesheet" type="text/css">    
+    
+	<!-- Mobile Menu -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.mmenu.all.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+    
+	<!--PreLoader-->
+	<link href="css/loader.css" rel="stylesheet" type="text/css">
+   
+</head>
+  <style>
+    .header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #6B2C91;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover {
+    color:#f5b000;
+}
+
+.menu ul li.active a {
+    background:#f5b000;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 4px;
+}
+
+@media (max-width: 991px) {
+    .menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        display: none;
+        border-top: 1px solid #eee;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .menu ul li {
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu ul li a {
+        display: block;
+        padding: 14px;
+    }
+
+}
+.footer {
+  color: #fff;
+  background: url("./images2/footer-bg.jpg") top center no-repeat;
+  background-size: cover;
+  font-size: 14px;
+  padding: 80px 0 60px 0;
+  position: relative;
+}
+
+.footer:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  inset: 0;
+}
+
+.footer .footer-content .footer-info {
+  margin-bottom: 30px;
+}
+
+.footer .footer-content .footer-info h3 {
+  font-size: 28px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer .footer-content .footer-info h3 span {
+  color: var(--color-primary);
+}
+
+.footer .footer-content .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: var(--font-primary);
+  color: #fff;
+}
+
+.footer .footer-content .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  line-height: 1;
+  margin-right: 8px;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+.footer .footer-content .social-links a:hover {
+  background: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer .footer-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-content .footer-links {
+  margin-bottom: 30px;
+}
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        135deg,
+        #3b0a57,
+        #6b2c91,
+        #f5b000
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+    transition: 0.4s ease;
+}
+
+/* subtle shine on hover */
+.logo:hover {
+    letter-spacing: 2px;
+}
+
+/* ===== GLOSSY DEPTH & GLOW ===== */
+.logo::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 12px;
+    background: linear-gradient(
+        120deg,
+        rgba(245,176,0,0.25),
+        rgba(107,44,145,0.25),
+        rgba(0,0,0,0)
+    );
+    filter: blur(12px);
+    opacity: 0;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.logo:hover::after {
+    opacity: 1;
+}
+/* ===== INDUSTRIAL ACCENT ===== */
+.logo span {
+    color: #f5b000;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(90deg, #f5b000, transparent);
+    transition: 0.4s ease;
+}
+
+.logo:hover::before {
+    width: 70%;
+}
+@media (max-width: 768px) {
+    .logo {
+        font-size: 22px;
+        letter-spacing: 0.8px;
+    }
+}
+
+
+.footer .footer-content .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-content .footer-links ul li {
+  padding: 8px 0;
+}
+
+.footer .footer-content .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-content .footer-links ul a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-content .footer-links ul a:hover {
+  color: #fff;
+}
+
+.footer .footer-legal .copyright {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer .footer-legal .credits {
+  padding-top: 4px;
+  font-size: 13px;
+  color: #fff;
+}
+
+.footer .footer-legal .credits a {
+  color: var(--color-primary);
+}
+
+* SECTION BASE */
+.team {
+    background: #fff;
+}
+
+/* SECTION HEADER */
+.team .section-header {
+    max-width: 900px;
+    margin: 0 auto 70px auto;
+}
+
+/* HEADING STYLE */
+.team .section-header h2 {
+    position: relative;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    color: #2f2f2f;
+    margin-bottom: 30px;
+}
+
+/* YELLOW LINES LEFT & RIGHT */
+.team .section-header h2::before,
+.team .section-header h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 3px;
+    background: #f5b000;
+}
+
+.team .section-header h2::before {
+    left: -80px;
+}
+
+.team .section-header h2::after {
+    right: -80px;
+}
+
+/* PARAGRAPH / LIST TEXT */
+.team .section-header p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #4a6073;
+    margin: 0;
+}
+
+/* SPACE BETWEEN TWO BLOCKS */
+.team .container + .container {
+    margin-top: 80px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .team .section-header h2::before,
+    .team .section-header h2::after {
+        display: none;
+    }
+
+    .team .section-header h2 {
+        font-size: 28px;
+    }
+
+    .team .section-header p {
+        font-size: 16px;
+    }
+}
+
+/* INITIAL STATE (hidden lines) */
+.team .section-header h2::before,
+.team .section-header h2::after {
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 1.2s ease;
+}
+
+/* ANIMATE IN */
+.team .section-header.in-view h2::before,
+.team .section-header.in-view h2::after {
+    transform: scaleX(1);
+}
+
+/* OPTIONAL: subtle heading fade */
+.team .section-header {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.team .section-header.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CARD BASE */
+.news-masonary .news-sec {
+    background: #fff;
+    padding: 40px 30px;
+    min-height: 260px;
+    border-radius: 4px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* OUTER BORDER */
+.news-masonary .border {
+    margin-bottom: 30px;
+}
+
+/* HOVER EFFECT */
+.news-masonary .news-sec:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+/* ICON CIRCLE */
+.news-masonary .detail span {
+    display: inline-flex;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #f2f2f2;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* ICON PLACEHOLDER (you can replace with font icons later) */
+.news-masonary .detail span::after {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background: #555;
+    border-radius: 4px;
+    margin: auto;
+}
+
+/* TITLE */
+.news-masonary .detail h5 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1f2d3d;
+}
+
+/* UNDERLINE */
+.news-masonary .detail h5::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e5e5e5;
+    margin-top: 10px;
+}
+
+/* TEXT */
+.news-masonary .detail p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4a6073;
+}
+
+/* DEFAULT (GREY) */
+.news-masonary .detail span {
+    background: #f2f2f2;
+    transition: background 0.3s ease;
+}
+
+.news-masonary .detail h5::after {
+    background: #e5e5e5;
+    transition: background 0.3s ease;
+}
+
+/* HOVER = YELLOW */
+.news-masonary .border:hover .detail span {
+    background: #f5b000;
+}
+
+.news-masonary .border:hover .detail span::after {
+    background: #000;
+}
+
+.news-masonary .border:hover .detail h5::after {
+    background: #f5b000;
+}
+
+.news-masonary .border:hover h5 {
+    color: #000;
+}
+/* FORCE 3 CARDS PER ROW */
+.news-masonary .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* EACH COLUMN */
+.news-masonary .col-md-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CARD WRAPPER */
+.news-masonary .border {
+    flex: 1;
+    display: flex;
+}
+
+/* CARD */
+.news-masonary .news-sec {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 280px;   /* SAME HEIGHT FOR ALL */
+}
+@media (max-width: 991px) {
+    .news-masonary .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .news-masonary .col-md-4 {
+        width: 100%;
+    }
+}
+@media (max-width: 576px) {
+    .news-masonary .row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+/* SCROLL ANIMATION */
+.news-masonary .border {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.news-masonary .border.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* INSPECTIONS SECTION HEADER */
+.news-masonary::before {
+    content: "";
+    display: block;
+    height: 1px;
+}
+
+.news-masonary .container:first-child {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.news-masonary h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2f2f2f;
+    margin-bottom: 15px;
+}
+
+.news-masonary h2::before,
+.news-masonary h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 3px;
+    background: #f5b000;
+}
+
+.news-masonary h2::before {
+    left: -80px;
+}
+
+.news-masonary h2::after {
+    right: -80px;
+}
+
+.news-masonary .subtitle {
+    font-size: 18px;
+    color: #5a6f80;
+}
+
+/* GRID FIX */
+.news-masonary .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 991px) {
+    .news-masonary .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .news-masonary .row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.news-masonary .border {
+    background: transparent;
+}
+
+.news-masonary .news-sec {
+    background: #fff;
+    padding: 45px 35px;
+    min-height: 300px;
+    border-radius: 4px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.news-masonary .news-sec:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+.news-masonary .detail span {
+    width: 60px;
+    height: 60px;
+    background: #f2f2f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: background 0.3s ease;
+}
+.news-masonary .detail h5 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2d3d;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.news-masonary .detail h5::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e5e5e5;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.news-masonary .border:hover .detail h5::after {
+    background: #f5b000;
+}
+
+.news-masonary .border:hover .detail span {
+    background: #f5b000;
+}
+.news-masonary .detail p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a6073;
+}
+
+
+/* SECTION BASE */
+.inspections-section {
+    padding: 100px 0;
+}
+
+/* HEADER */
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-header h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2f2f2f;
+    margin-bottom: 15px;
+}
+
+.section-header h2::before,
+.section-header h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 3px;
+    background: #f5b000;
+}
+
+.section-header h2::before {
+    left: -80px;
+}
+
+.section-header h2::after {
+    right: -80px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #5a6f80;
+}
+
+/* GRID */
+.inspection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* CARD */
+.inspection-card {
+    background: #d7d2d2;
+    padding: 45px 35px;
+    min-height: 300px;
+    border-radius: 4px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.inspection-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: #eeeeee;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 25px;
+    transition: background 0.3s ease;
+}
+
+/* TITLE */
+.inspection-card h5 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2d3d;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.inspection-card h5::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e5e5e5;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+/* TEXT */
+.inspection-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a6073;
+}
+
+/* HOVER YELLOW */
+.inspection-card:hover .icon-circle {
+    background: #f5b000;
+}
+
+.inspection-card:hover h5::after {
+    background: #f5b000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .inspection-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .inspection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2::before,
+    .section-header h2::after {
+        display: none;
+    }
+}
+
+
+
+
+/* STOP SCROLL JERK / LAYOUT SHIFT */
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: auto !important;
+}
+
+/* Prevent animation from affecting layout */
+.team .section-header,
+.team .section-header * {
+    will-change: transform, opacity;
+}
+
+/* Ensure animations do NOT change height */
+.team .section-header {
+    min-height: 1px;
+}
+
+/* Kill AOS side effects (you are not using AOS JS) */
+.aos-init,
+.aos-animate {
+    transition: none !important;
+    transform: none !important;
+}
+
+/* FORCE TRANSPARENT HEADER (DESKTOP + MOBILE) */
+.header {
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+.header {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    box-shadow: none !important;
+}
+/* OVERRIDE STICKY HEADER SCROLL EFFECT */
+.header.sticky,
+.header.fixed,
+.header.scrolled {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+#page .header {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* ===== SUB BANNER WITH IMAGE ===== */
+.sub-banner {
+    position: relative;
+    min-height: 320px;
+    background: url("images2/85.png") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+/* Dark overlay for readability */
+.sub-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Ensure content stays above overlay */
+.sub-banner .detail {
+    position: relative;
+    z-index: 2;
+}
+.sub-banner h2 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.sub-banner .paging ul li,
+.sub-banner .paging ul li a {
+    color: rgba(255,255,255,0.85);
+}
+
+.sub-banner .paging ul li a:hover {
+    color: #f5b000;
+}
+@media (max-width: 768px) {
+    .sub-banner {
+        min-height: 240px;
+    }
+
+    .sub-banner h2 {
+        font-size: 28px;
+    }
+}
+/* ============================= */
+/* 🔍 INSPECTIONS – PREMIUM UI  */
+/* ============================= */
+
+.inspections-section {
+    padding: 100px 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(245,176,0,0.05),
+        rgba(107,44,145,0.04)
+    );
+}
+
+/* HEADER */
+.inspections-section .section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.inspections-section .section-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+    color: #2f2f2f;
+}
+
+.inspections-section .section-header h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #f5b000;
+    margin: 16px auto 0;
+    border-radius: 4px;
+}
+
+.inspections-section .subtitle {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #5a6f80;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* GRID */
+.inspection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* CARD */
+.inspection-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    padding: 45px 35px;
+    border-radius: 18px;
+    min-height: 300px;
+
+    box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* LIGHT GLOW STRIPE */
+.inspection-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(245,176,0,0.15),
+        transparent
+    );
+    opacity: 0;
+    transition: 0.45s ease;
+}
+
+/* ICON */
+.inspection-card .icon-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(245,176,0,0.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    transition: 0.45s ease;
+}
+
+/* TITLE */
+.inspection-card h5 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2d3d;
+    margin-bottom: 14px;
+}
+
+/* TEXT */
+.inspection-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a6073;
+}
+
+/* HOVER EFFECT */
+.inspection-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 65px rgba(0,0,0,0.2);
+}
+
+.inspection-card:hover::before {
+    opacity: 1;
+}
+
+.inspection-card:hover .icon-circle {
+    background: #f5b000;
+    transform: scale(1.1);
+}
+
+/* SCROLL ANIMATION */
+.inspection-card {
+    opacity: 0;
+    transform: translateY(35px);
+}
+
+.inspection-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.15s;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .inspection-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .inspection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inspections-section .section-header h2 {
+        font-size: 30px;
+    }
+
+    .inspections-section .subtitle {
+        font-size: 16px;
+    }
+}
+
+/* =============================== */
+/* 📰 NEWS / QUALITY SECTION UI   */
+/* =============================== */
+
+.news-posts {
+    padding: 80px 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(245,176,0,0.04),
+        rgba(107,44,145,0.03)
+    );
+}
+
+/* CARD */
+.news-posts .news-sec {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    padding: 45px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+
+    box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* SOFT GLOW */
+.news-posts .news-sec::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(245,176,0,0.18),
+        transparent
+    );
+    opacity: 0;
+    transition: 0.45s ease;
+}
+
+/* IMAGE */
+.news-posts .news-sec img {
+    width: 42%;
+    border-radius: 16px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* CONTENT */
+.news-posts .news-sec .detail {
+    flex: 1;
+}
+
+.news-posts .news-sec .detail h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1f2d3d;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+/* UNDERLINE */
+.news-posts .news-sec .detail h3::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #f5b000;
+    margin-top: 12px;
+    border-radius: 4px;
+}
+
+/* TEXT */
+.news-posts .news-sec .detail p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #4a6073;
+}
+
+/* HOVER EFFECT */
+.news-posts .news-sec:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 32px 65px rgba(0,0,0,0.2);
+}
+
+.news-posts .news-sec:hover::before {
+    opacity: 1;
+}
+
+.news-posts .news-sec:hover img {
+    transform: scale(1.08);
+}
+
+/* LINK CARD (ISO CERTIFICATE) */
+.news-posts .news-sec a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* SCROLL ANIMATION */
+.news-posts .news-sec {
+    opacity: 0;
+    transform: translateY(35px);
+}
+
+.news-posts .news-sec.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .news-posts .news-sec {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .news-posts .news-sec img {
+        width: 100%;
+    }
+
+    .news-posts .news-sec .detail h3::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* ===============================
+   SMOOTH PREMIUM PRELOADER
+================================ */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #ffffff, #ffffff);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* Wrapper */
+.loader-wrap {
+  text-align: center;
+}
+
+/* TEXT */
+.loader-text {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.loader-text .atlas {
+  color: #6b2c91;
+  animation: textFloat 2.8s ease-in-out infinite;
+}
+
+.loader-text .foundries {
+  color: #f5b000;
+  animation: textFloat 2.8s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+/* FLOATING TEXT */
+@keyframes textFloat {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+/* LOADING BAR */
+.loader-bar {
+  width: 260px;
+  height: 5px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* BAR ANIMATION */
+.loader-bar span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(245,176,0,0.9),
+    rgba(107,44,145,0.9),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: smoothLoad 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* SMOOTH BAR MOTION */
+@keyframes smoothLoad {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+/* FADE OUT */
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+  </style>
+  <body>
+   
+  <div id="wrap">
+   
+   <!-- PRELOADER -->
+<div id="preloader">
+  <div class="loader-wrap">
+    <div class="loader-text">
+      <span class="atlas">ATLAS</span>
+      <span class="foundries">FOUNDRIES</span>
+    </div>
+    <div class="loader-bar">
+      <span></span>
+    </div>
+  </div>
+</div>
+
+	
+  
+   <!--Start Top Bar-->
+   <div class="top-bar">
+   		<div class="container">
+    		<div class="row">
+            	
+                <div class="col-md-5">
+                	<span >To Contact</span>
+                </div>
+                
+                <div class="col-md-7">
+                
+                
+                	
+    
+    
+                	<div class="get-touch">
+                    	
+						<ul>
+                        <li><a><i class="icon-phone4"></i> +91 98307 35480</a></li>
+                        <li><a href="#."><i class="icon-mail"></i> enquiry@atlasfoundries.com</a></li>
+						</ul>
+                    </div>	
+                </div>
+                
+            </div>
+    	</div>
+   </div> 
+   <!--Top Bar End-->
+   
+   
+   <!--Start Header-->
+   
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <!-- Logo -->
+            <a href="index.html" class="logo">Atlas Foundries</a>
+
+            <!-- Navigation -->
+            <nav class="menu">
+                <ul>
+                    <li ><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="lost-foam-manufacturing.html">Lost Foam Manufacturing</a></li>
+                    <li><a href="infrastructure.html">Infrastructure</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li class="active"><a href="quality.html">Quality</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</header>
+   <!--End Header-->
+	
+	
+	<!-- Mobile Menu Start -->
+	<div class="container">
+    <div id="page">
+			<header class="header">
+				<a href="#menu"></a>
+				
+			</header>
+			
+			<nav id="menu">
+				<ul>
+					<li><a href="index.html">Home</a>
+                    </li>
+					<li><a href="about-us.html">About us</a>
+                    </li>
+                    <li><a href="lost-foam-manufacturing.html">Lost Foam Manufacturing</a>
+                    </li>
+
+                    <li><a href="infrastructure.html">Infrastructure</a></li>
+
+					<li><a href="products.html">Products</a>
+						
+                    </li>
+
+
+                    <li class="select"><a href="quality.html">Quality</a>
+                    </li>
+					
+					<li><a href="contact-us.html">Contact Us</a>
+
+                    </li>
+					
+				</ul>
+                
+                
+			</nav>
+		</div>
+		</div>
+    <!-- Mobile Menu End -->
+
+	
+   <!--Start Banner-->
+   
+   <div class="sub-banner">
+   
+    <div class="detail">
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-md-12">
+                	
+                    <div class="paging">
+                		<h2>Quality</h2>
+						<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a>Quality</a></li>
+						</ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+   
+   </div>	
+   
+   <!--End Banner-->
+   
+    
+   
+   <!--Start Content-->
+   <div class="content">
+		
+		<div class="news-posts">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-12">
+
+							<div class="news-sec">
+								<img src="images2/qp.png" alt="" style="width: 45%;">
+								<div class="detail">
+									<span></span>
+									<h3>Quality Policy</h3>
+									<p>To deliver superior quality products at a reasonable price and in time-bound manner. To achieve customer satisfaction through meeting quality requirements of product and process. To elicit customer appreciation through continuous improvement in products and processes.</p>
+									
+								</div>
+							</div>
+							
+							
+							<div class="news-sec">
+								
+								<div id="demo">
+								
+									<div id="blog-slide" class="owl-carousel">
+										<img src="images2/qa.png" alt="" style="width: 45%;">
+									</div>
+								
+								</div>
+								
+								<div class="detail">
+									<span></span>
+									<h3>Quality Assurance</h3>
+									<p>We follow a continuous improvement methodology with regards to quality. Our management team focuses on training & updating our human capital & sensitizing them to the importance of delivering the best product first time and every time. Our team of highly skilled supervisors have implemented control systems at every stage to ensure we are able to achieve the desired performance levels to ensure complete customer satisfaction</p>
+								</div>
+							</div>
+							
+							<div class="news-sec">
+								<a href="images2/Certificate_ISO_9001_QMS.pdf" target="_blank">
+								<img src="images2/Certificate.jpg" href="images2/Certificate_ISO_9001_QMS.pdf" alt="" style="width: 45%;">
+								<div class="detail">
+									<span></span>
+									<h3>ISO Certification</h3>
+								</div>
+								</a>
+							</div>
+
+
+<section class="inspections-section">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Inspections</h2>
+      <p class="subtitle">
+        Inspections performed at every step to ensure product meets all requisite standards.
+      </p>
+    </div>
+
+    <div class="inspection-grid">
+
+      <div class="inspection-card">
+        <span class="icon-circle">🏭</span>
+        <h5>Raw Material</h5>
+        <p>
+          Visual Inspection, Test Reports, In-House Testing to ensure required compositions
+        </p>
+      </div>
+
+      <div class="inspection-card">
+        <span class="icon-circle">📈</span>
+        <h5>Molding</h5>
+        <p>
+          Visual Inspection, Density Tester to ensure error free molds/patterns
+        </p>
+      </div>
+
+      <div class="inspection-card">
+        <span class="icon-circle">🛠️</span>
+        <h5>Assembly/Compaction</h5>
+        <p>
+          Visual Inspection, Strict Dimensional Control to ensure accurate castings in pouring
+          without shifts, breaks, etc.
+        </p>
+      </div>
+
+      <div class="inspection-card">
+        <span class="icon-circle">🔥</span>
+        <h5>Melting</h5>
+        <p>
+          Proportion checks, temperature control, composition analysis, time control to ensure
+          proper mechanical and chemical compositions
+        </p>
+      </div>
+
+      <div class="inspection-card">
+        <span class="icon-circle">🏗️</span>
+        <h5>Shakeout</h5>
+        <p>
+          Visual Inspection, Dimensional Checking, Surface Check to ensure stage 1 compliance
+          of quality parameters
+        </p>
+      </div>
+
+      <div class="inspection-card">
+        <span class="icon-circle">✅</span>
+        <h5>Fettling / Finishing</h5>
+        <p>
+          Visual Inspection, Weight Check, Paint, etc. to ensure error free dispatch
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+						<div class="news-masonary">
+
+
+
+
+
+      			<section id="team" class="team" style="padding: 80px 0;
+    overflow: hidden;">
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2 >Testing Facilities</h2>
+          <p align="left" style="font-size: 20px;">
+(a)	29 channel Optical emission Spectrometer<br>
+(b)	Microscope<br>
+(c)	Portable Hardness Tester<br>
+(d)	Grinding Machine, Surface cutter and polishing machine for sample preparation<br>
+(e)	C –Si Analyser, portable pyrometer for melting<br>
+(f)	Sand Sieve for testing<br>
+(g)	Hydrotesting Machine<br>
+(h)	Others - Weighing scales, inside outside gauge, calipers, Ultrasonic Thickness measurement gauge, Tachometer, Vacuum Gauge, Baume meter, etc for various measurements<br>
+<br>
+</p>
+        </div>
+      </div>
+
+    </section>
+		</div>	
+							
+					
+							
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+  
+  
+  
+   
+   </div>
+   <!--End Content-->
+   
+   
+   
+<footer id="footer" class="footer">
+
+    <div class="footer-content position-relative">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Atlas Foundries</h3>
+              <p>
+Office – 225/2 CIT Road, Scheme VII M, Kolkata - 700054<br>
+Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Howrah - 711410.<br>
+
+<strong>Phone:</strong> +91 98307 35480<br>
+                <strong>Email:</strong> enquiry@atlasfoundries.com<br>
+              </p>
+             </div>
+          </div><!-- End footer info column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="quality.html">Quality</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+	  <li><a href="lost-foam-manufacturing.html">Lost Foam Manufacturing</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          </div>
+      </div>
+    </div>
+
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          <p></p>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
+        
+        </div>
+      </div>
+    </div>
+
+    
+
+  </footer>
+  <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <span class="copyrights">© Copyright Atlas Foundries. All Rights Reserved Designed by Dreamline Production</span>
+              </div>
+            </div>
+          </div>
+
+          <a class="back-to-top" href="#."></a>
+        </div>
+
+
+
+<a href="#0" class="cd-top"></a>
+  </div>
+
+
+
+<script type="text/javascript" src="js/jquery.js"></script>
+
+
+<!-- START REVOLUTION SLIDER -->	
+<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
+
+
+<!-- Date Picker and input hover -->
+<script type="text/javascript" src="js/classie.js"></script> 
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js"></script>
+
+
+<!-- Welcome Tabs -->	
+<script type="text/javascript" src="js/tabs.js"></script>
+
+
+<!-- All Carousel -->
+<script type="text/javascript" src="js/owl.carousel.js"></script>
+
+<!-- Mobile Menu -->
+<script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+
+<!-- All Scripts -->
+<script type="text/javascript" src="js/custom.js"></script> 
+
+<script>
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const cards = document.querySelectorAll(".news-masonary .border");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    cards.forEach(card => observer.observe(card));
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".inspection-card");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        entry.target.style.transitionDelay = `${i * 120}ms`;
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const newsCards = document.querySelectorAll(".news-posts .news-sec");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        entry.target.style.transitionDelay = `${i * 150}ms`;
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  newsCards.forEach(card => observer.observe(card));
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const headers = document.querySelectorAll(".team .section-header");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    requestAnimationFrame(() => {
+                        entry.target.classList.add("in-view");
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: "0px 0px -80px 0px"
+        }
+    );
+
+    headers.forEach(header => observer.observe(header));
+});
+</script>
+<script>
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+
+  setTimeout(() => {
+    preloader.classList.add("fade-out");
+  }, 900); // slightly delayed for smooth exit
+});
+</script>
+
+
+</body>
+</html>

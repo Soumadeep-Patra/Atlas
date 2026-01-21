@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Atlas Foundries</title>
+    <meta name="keywords" content="">
+	<meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+    <!--main file-->
+	<link href="css/medical-guide.css" rel="stylesheet" type="text/css">
+    
+    <!--Medical Guide Icons-->
+	<link href="fonts/medical-guide-icons.css" rel="stylesheet" type="text/css">
+    
+	<!-- Default Color-->
+	<link href="css/default-color.css" rel="stylesheet" id="color"  type="text/css">
+
+    <!--bootstrap-->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    
+    <!--Dropmenu-->
+	<link href="css/dropmenu.css" rel="stylesheet" type="text/css">
+    
+	<!--Sticky Header-->
+	<link href="css/sticky-header.css" rel="stylesheet" type="text/css">
+	
+	<!--revolution-->
+	<link href="css/style.css" rel="stylesheet" type="text/css">    
+    <link href="css/settings.css" rel="stylesheet" type="text/css">    
+    <link href="css/extralayers.css" rel="stylesheet" type="text/css">    
+   
+    <!--Accordion-->
+    <link href="css/accordion.css" rel="stylesheet" type="text/css">
+     
+    <!--tabs-->
+	<link href="css/tabs.css" rel="stylesheet" type="text/css">    
+   
+    <!--Owl Carousel-->
+	<link href="css/owl.carousel.css" rel="stylesheet" type="text/css">    
+    
+	<!-- Mobile Menu -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.mmenu.all.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	
+	<!--PreLoader-->
+	<link href="css/loader.css" rel="stylesheet" type="text/css">
+	
+  </head>
+  <style>
+    .header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+/* ===== PREMIUM LOGO STYLE ===== */
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        135deg,
+        #3b0a57,
+        #6b2c91,
+        #f5b000
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+    transition: 0.4s ease;
+}
+
+/* subtle shine on hover */
+.logo:hover {
+    letter-spacing: 2px;
+}
+
+/* ===== GLOSSY DEPTH & GLOW ===== */
+.logo::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 12px;
+    background: linear-gradient(
+        120deg,
+        rgba(245,176,0,0.25),
+        rgba(107,44,145,0.25),
+        rgba(0,0,0,0)
+    );
+    filter: blur(12px);
+    opacity: 0;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.logo:hover::after {
+    opacity: 1;
+}
+/* ===== INDUSTRIAL ACCENT ===== */
+.logo span {
+    color: #f5b000;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(90deg, #f5b000, transparent);
+    transition: 0.4s ease;
+}
+
+.logo:hover::before {
+    width: 70%;
+}
+@media (max-width: 768px) {
+    .logo {
+        font-size: 22px;
+        letter-spacing: 0.8px;
+    }
+}
+
+
+.menu ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #f5b000;
+}
+
+.menu ul li.active a {
+    background: #f5b000;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 4px;
+}
+
+@media (max-width: 991px) {
+    .menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        display: none;
+        border-top: 1px solid #eee;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .menu ul li {
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu ul li a {
+        display: block;
+        padding: 14px;
+    }
+
+}
+	.process-steps {
+    width: 100%;
+    margin: 40px auto;
+
+
+.process-title{
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.steps li {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    color: #666;
+    padding-bottom: 15px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Grey line */
+.steps li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: #e5e5e5;
+}
+
+/* Active Step */
+.steps li.active {
+    color: #f5b000;
+    font-weight: 600;
+}
+
+.steps li.active::after {
+    background: #f5b000;
+}
+.steps li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.steps li:hover {
+    color: #f5b000;
+}
+
+
+}
+
+.footer {
+  color: #fff;
+  background: url("./images2/footer-bg.jpg") top center no-repeat;
+  background-size: cover;
+  font-size: 14px;
+  padding: 80px 0 60px 0;
+  position: relative;
+}
+
+.footer:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  inset: 0;
+}
+
+.footer .footer-content .footer-info {
+  margin-bottom: 30px;
+}
+
+.footer .footer-content .footer-info h3 {
+  font-size: 28px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer .footer-content .footer-info h3 span {
+  color: var(--color-primary);
+}
+
+.footer .footer-content .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: var(--font-primary);
+  color: #fff;
+}
+
+.footer .footer-content .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  line-height: 1;
+  margin-right: 8px;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+.footer .footer-content .social-links a:hover {
+  background: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer .footer-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-content .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-content .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-content .footer-links ul li {
+  padding: 8px 0;
+}
+
+.footer .footer-content .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-content .footer-links ul a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-content .footer-links ul a:hover {
+  color: #fff;
+}
+
+.footer .footer-legal .copyright {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer .footer-legal .credits {
+  padding-top: 4px;
+  font-size: 13px;
+  color: #fff;
+}
+
+.footer .footer-legal .credits a {
+  color: var(--color-primary);
+}
+
+/* SECTION BASE */
+.team {
+    background: #fff;
+}
+
+/* SECTION HEADER */
+.team .section-header {
+    max-width: 900px;
+    margin: 0 auto 70px auto;
+}
+
+/* HEADING STYLE */
+.team .section-header h2 {
+    position: relative;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    color: #2f2f2f;
+    margin-bottom: 30px;
+}
+
+/* YELLOW LINES LEFT & RIGHT */
+.team .section-header h2::before,
+.team .section-header h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 3px;
+    background: #f5b000;
+}
+
+.team .section-header h2::before {
+    left: -80px;
+}
+
+.team .section-header h2::after {
+    right: -80px;
+}
+
+/* PARAGRAPH / LIST TEXT */
+.team .section-header p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #4a6073;
+    margin: 0;
+}
+
+/* SPACE BETWEEN TWO BLOCKS */
+.team .container + .container {
+    margin-top: 80px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .team .section-header h2::before,
+    .team .section-header h2::after {
+        display: none;
+    }
+
+    .team .section-header h2 {
+        font-size: 28px;
+    }
+
+    .team .section-header p {
+        font-size: 16px;
+    }
+}
+
+/* INITIAL STATE (hidden lines) */
+.team .section-header h2::before,
+.team .section-header h2::after {
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 1.2s ease;
+}
+
+/* ANIMATE IN */
+.team .section-header.in-view h2::before,
+.team .section-header.in-view h2::after {
+    transform: scaleX(1);
+}
+
+/* OPTIONAL: subtle heading fade */
+.team .section-header {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.team .section-header.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* STOP SCROLL JERK / LAYOUT SHIFT */
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: auto !important;
+}
+
+/* Prevent animation from affecting layout */
+.team .section-header,
+.team .section-header * {
+    will-change: transform, opacity;
+}
+
+/* Ensure animations do NOT change height */
+.team .section-header {
+    min-height: 1px;
+}
+
+/* Kill AOS side effects (you are not using AOS JS) */
+.aos-init,
+.aos-animate {
+    transition: none !important;
+    transform: none !important;
+}
+/* FORCE TRANSPARENT HEADER (DESKTOP + MOBILE) */
+.header {
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+.header {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    box-shadow: none !important;
+}
+/* OVERRIDE STICKY HEADER SCROLL EFFECT */
+.header.sticky,
+.header.fixed,
+.header.scrolled {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+#page .header {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* ===== SUB BANNER WITH IMAGE ===== */
+.sub-banner {
+    position: relative;
+    min-height: 320px;
+    background: url("images2/87.png") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+/* Dark overlay for readability */
+.sub-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Ensure content stays above overlay */
+.sub-banner .detail {
+    position: relative;
+    z-index: 2;
+}
+.sub-banner h2 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.sub-banner .paging ul li,
+.sub-banner .paging ul li a {
+    color: rgba(255,255,255,0.85);
+}
+
+.sub-banner .paging ul li a:hover {
+    color: #f5b000;
+}
+@media (max-width: 768px) {
+    .sub-banner {
+        min-height: 240px;
+    }
+
+    .sub-banner h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* ===== REMOVE OWL CAROUSEL ARROWS ===== */
+.owl-nav,
+.owl-prev,
+.owl-next {
+    display: none !important;
+}
+.owl-dots {
+    display: none !important;
+}
+
+/* ===== FORCE MOBILE STACKING FOR PROCESS STEPS ===== */
+@media (max-width: 768px) {
+
+    /* override grid / flex completely */
+    .process-steps ul.steps {
+        display: block !important;
+        grid-template-columns: none !important;
+        overflow: visible !important;
+    }
+
+    .process-steps ul.steps li {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 16px;
+        padding: 14px 12px 14px 18px;
+
+        font-size: 16px;
+        text-align: left;
+        white-space: normal;
+
+        border-left: 4px solid #e0e0e0;
+        background: #fff;
+        border-radius: 6px;
+
+        transition: all 0.3s ease;
+    }
+
+    /* remove underline bar */
+    .process-steps ul.steps li::after {
+        display: none !important;
+    }
+
+    /* active step */
+    .process-steps ul.steps li.active {
+        border-left-color: #f5b000;
+        background: rgba(245,176,0,0.08);
+        color: #f5b000;
+        font-weight: 600;
+    }
+}
+
+/* ===== ULTRA COOL MAIN TITLE ===== */
+.main-title {
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.9s ease;
+}
+
+/* show on scroll */
+.main-title.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* small top label */
+.main-title h2 span {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f5b000;
+    margin-bottom: 12px;
+}
+
+/* main heading */
+.main-title h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #1e1e1e;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+/* animated underline */
+.main-title h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #f5b000, #6b2c91);
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+/* hover expand underline */
+.main-title:hover h2::after {
+    width: 130px;
+}
+
+/* description text */
+.main-title p {
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* subtle glow */
+.main-title::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(
+        circle,
+        rgba(245,176,0,0.12),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.main-title:hover::before {
+    opacity: 1;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .main-title h2 {
+        font-size: 30px;
+    }
+
+    .main-title p {
+        font-size: 15px;
+    }
+}
+
+/* ===== COOL PROCESS TITLE ===== */
+.process-title {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #222;
+    margin-bottom: 30px;
+    padding-left: 18px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+/* gold vertical accent */
+.process-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 5px;
+    height: 70%;
+    background: linear-gradient(180deg, #f5b000, #6b2c91);
+    border-radius: 6px;
+}
+
+/* subtle underline */
+.process-title::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    bottom: -8px;
+    width: 55px;
+    height: 3px;
+    background: #f5b000;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+/* hover effect */
+.process-title:hover::after {
+    width: 120px;
+}
+
+/* reveal animation */
+.process-title.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .process-title {
+        font-size: 18px;
+    }
+}
+
+/* ===============================
+   SMOOTH PREMIUM PRELOADER
+================================ */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #ffffff, #ffffff);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* Wrapper */
+.loader-wrap {
+  text-align: center;
+}
+
+/* TEXT */
+.loader-text {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.loader-text .atlas {
+  color: #6b2c91;
+  animation: textFloat 2.8s ease-in-out infinite;
+}
+
+.loader-text .foundries {
+  color: #f5b000;
+  animation: textFloat 2.8s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+/* FLOATING TEXT */
+@keyframes textFloat {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+/* LOADING BAR */
+.loader-bar {
+  width: 260px;
+  height: 5px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* BAR ANIMATION */
+.loader-bar span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(245,176,0,0.9),
+    rgba(107,44,145,0.9),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: smoothLoad 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* SMOOTH BAR MOTION */
+@keyframes smoothLoad {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+/* FADE OUT */
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+  </style>
+  <body>
+    
+  <div id="wrap">
+   
+   <!-- PRELOADER -->
+<div id="preloader">
+  <div class="loader-wrap">
+    <div class="loader-text">
+      <span class="atlas">ATLAS</span>
+      <span class="foundries">FOUNDRIES</span>
+    </div>
+    <div class="loader-bar">
+      <span></span>
+    </div>
+  </div>
+</div>
+
+
+   
+   
+   <!--Start Top Bar-->
+   <div class="top-bar">
+   		<div class="container">
+    		<div class="row">
+            	
+                <div class="col-md-5">
+                	<span >To Contact</span>
+                </div>
+                
+                <div class="col-md-7">  
+                	<div class="get-touch">
+                    	
+						<ul>
+                        <li><a><i class="icon-phone4"></i>+91 98307 35480</a></li>
+                        <li><a href="#."><i class="icon-mail"></i>enquiry@atlasfoundries.com</a></li>
+						</ul>
+                        
+                    </div>	
+                </div>
+                
+            </div>
+    	</div>
+   </div> 
+   <!--Top Bar End-->
+   
+   
+   <!--Start Header-->
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <!-- Logo -->
+            <a href="index.html" class="logo">Atlas Foundries</a>
+
+            <!-- Navigation -->
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li class="active"><a href="team-members2.html">Lost Foam Manufacturing</a></li>
+                    <li><a href="infrastructure.html">Infrastructure</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="quality.html">Quality</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</header>
+   <!--End Header-->
+	
+	
+	<!-- Mobile Menu Start -->
+	<div class="container">
+    <div id="page">
+			<header class="header">
+				<a href="#menu"></a>
+				
+			</header>
+			
+			<nav id="menu">
+				<ul>
+					<li><a href="index.html">Home</a>
+                    </li>
+					<li><a href="about-us.html">About us</a>
+                    </li>
+                    <li class="select"><a href="#.">Lost Foam Manufacturing</a>
+                    </li>
+                    
+                    <li><a href="infrastructure.html">Infrastructure</a></li>
+					
+					<li><a href="products.html">Products</a>
+
+                    </li>
+
+
+                    <li><a href="quality.html">Quality</a>
+                    </li>
+					
+					<li><a href="contact-us.html">Contact Us</a>
+
+                    </li>
+					
+				</ul>
+                
+                
+			</nav>
+		</div>
+		</div>
+    <!-- Mobile Menu End -->
+
+
+	
+   <!--Start Banner-->
+   
+   <div class="sub-banner">
+   
+    <div class="detail">
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-md-12">
+                	
+                    <div class="paging">
+                		<h2>Lost Foam Manufacturing</h2>
+						<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a>Lost Foam Manufacturing</a></li>
+						</ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+   
+   </div>	
+   
+   <!--End Banner-->
+   
+   
+   
+   <!--Start Content-->
+   <div class="content">
+   
+   
+   <!--Start Team Detail-->
+		<div class="member-detail">
+			<div class="container">
+			
+				<div class="row">
+				<div class="col-md-12">
+					<div class="main-title">
+						<h2><span>The </span> Process</h2>
+						<p>Lost Foam Casting is a type of evaporative pattern casting. This method is quite similar to investment casting which uses wax instead of foam in the pattern making process. This process takes advantage of the low boiling point of polymer foams to simplify the investment casting process by removing the need to melt the wax out of the mold. All other steps in the casting process are similar to sand casting. Lost Foam casting process can be said to combine the quality and surface benefits of investment casting with the economical production costs of Sand-Casting process. It is most advantageous for complex castings that would regularly require cores and are difficult to produce in the traditional green sand or no bake process.</p>
+					</div>
+				</div>
+				</div>
+
+				<section class="process-steps">
+    <p class="process-title" style="font-size: 20px; font-weight: 700; letter-spacing: 1px; color: #222; margin-bottom: 30px; padding-left: 18px;">The Process has following steps:</p>
+
+<ul class="steps">
+    <li class="active" data-step="0">EPS Beads Pre-forming</li>
+    <li data-step="1">Forming / Moulding</li>
+    <li data-step="2">Assembly</li>
+    <li data-step="3">Coating</li>
+    <li data-step="4">Compaction</li>
+    <li data-step="5">Vacuum</li>
+</ul>
+</section>
+
+				
+				<div id="demo">
+				<div class="row">
+				
+				<div >
+				<div id="team-detail" >
+				
+					<div class="post item" data-step="0">
+						
+						<div class="col-md-5">
+						
+							<div class="gallery-sec">		
+                        	<div class="image-hover img-layer-slide-left-right"  style="  float: left;
+  width: 400px;        /* set desired size */
+  height: 400px;        /* keeps aspect ratio */
+  margin-right: 15px;  /* spacing from text */
+  margin-bottom: 10px;
+  object-fit: cover;">
+							<img src="images2/73.png" alt="">
+                            </div>							
+							</div>
+						
+					</div>
+					
+					<div class="col-md-7">
+						<div class="team-detail">							
+							<div class="name">
+								<h6>EPS Beads Pre-forming</h6>
+								<span></span>
+							</div>
+							<span style="font-size: 50px; font-style: bold;">EPS is the primary raw material that is steam treated in order to make patterns which will be later used to cast the actual product</span>
+						</div>
+					</div>
+					</div>
+					
+					
+					<div class="post item" data-step="1">
+					<div class="col-md-5" >
+							
+							<div class="gallery-sec">		
+                        	<div class="image-hover img-layer-slide-left-right">
+							<img src="images2/4.jpg" alt="">
+                            </div>							
+							</div>
+							
+					</div>
+					
+					<div class="col-md-7">
+						<div class="team-detail">
+							
+							<div class="name">
+								<h6>Forming/Moulding</h6>
+								<span></span>
+							</div>
+							<span style="font-size: 50px; font-style: bold;">Preformed beads are then injected in a custom-made die to produce the patterns by application of steam and pressure. These patterns are an exact replica of the actual product required.</span>							
+						</div>
+					</div>
+					</div>
+
+
+					<div class="post item" data-step="2">
+					<div class="col-md-5">
+						
+							<div class="gallery-sec">		
+                        	<div class="image-hover img-layer-slide-left-right">
+							<img src="images2/Assembly_1.jpg" alt="">
+                            </div>							
+							</div>
+							
+					</div>
+					
+					<div class="col-md-7">
+						<div class="team-detail">
+							
+							<div class="name">
+								<h6>Assembly</h6>
+								<span></span>
+							</div>
+							<span style="font-size: 50px; font-style: bold;">Patterns are inspected for deformities or imperfections as any error in the pattern will result in a like error in the final product. They are glued to formed cluster and dried to make them stable for next process.</span>
+						</div>
+					</div>
+
+					
+
+					
+					</div>
+
+										<div class="post item" data-step="3">
+					<div class="col-md-5">
+						
+							<div class="gallery-sec">		
+                        	<div class="image-hover img-layer-slide-left-right">
+							<img src="images2/68.png" alt="">
+                          
+                            </div>							
+							</div>
+							
+					</div>
+					
+					<div class="col-md-7">
+						<div class="team-detail">
+							
+							<div class="name">
+								<h6>Coating</h6>
+								<span></span>
+							</div>
+							<span style="font-size: 50px; font-style: bold;">Patterns are then coated with refractory which acts as a barrier medium between sand and liquid metal during pouring. Coated patterns are dried in heating rooms..</span>
+								
+							
+						</div>
+					</div>
+					</div>
+
+					<div class="post item" data-step="4">
+					<div class="col-md-5">
+						
+							<div class="gallery-sec">		
+                        	<div class="image-hover img-layer-slide-left-right">
+							<img src="images2/features-5.png" alt="">
+                           
+                            </div>							
+							</div>
+							
+					</div>
+					
+					<div class="col-md-7">
+						<div class="team-detail">
+							
+							<div class="name">
+								<h6>Compaction</h6>
+								<span></span>
+							</div>
+							<span style="font-size: 50px; font-style: bold;">Patterns are compacted in free-flowing sand in a sandbox using a 3-axis vibration on a compaction table. This gives strength to the assembly to withstand pressure during pouring resulting in accurate dimensions of castings and zero defects due to deformities.</span>
+							
+							
+						</div>
+					</div>
+					</div>
+
+
+					<div class="post item" data-step="5">
+					<div class="col-md-5">
+						
+							<div class="gallery-sec">		
+                        	<div class="image-hover img-layer-slide-left-right">
+							<img src="images2/features-6.png" alt="">
+                           
+                            </div>							
+							</div>
+							
+					</div>
+					
+					<div class="col-md-7">
+						<div class="team-detail">
+							
+							<div class="name">
+								<h6>Vacuum</h6>
+								<span></span>
+							</div>
+							<span style="font-size: 50px; font-style: bold;">This is a critical step in the entire process. Pouring of liquid metal is done under high vacuum pressure to ensure all gas generated during evaporation of foam pattern is extracted.</span>
+								
+							
+						</div>
+					</div>
+					</div>
+					
+					
+				</div>
+				</div>
+				
+				</div>
+				</div>
+			</div>
+			<section id="team" class="team" style="padding: 80px 0;
+    overflow: hidden;">
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2 >Differences with Sand casting process</h2>
+          <p align="left" style="font-size: 20px;">
+1.	No usage of cores.<br>
+2.	No additives, binders, resins etc for treating sand.<br>
+3.	No risers.<br>
+4.	Sand is 100% recycled.<br>
+<br>
+</p>
+        </div>
+      </div>
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Advantages of Lost Foam Casting process</h2>
+          <p align="left" style="font-size: 20px;">
+1.	Outstanding results with complex/engineered castings involcing multiple cores.<br>
+2.	Excellent surface finish.<br>
+3.	Dimensionally accurate. Near net-shape castings achievable.<br>
+4.	Defects of blowholes, pinholes, flash etc eliminated completely.<br>
+5.	Requires no draft in removal of castings.<br>
+6.	Flexible process due to inherent nature of foam which is easier to handle.<br>
+7.	Economical. As the complexity increases, overall costs of a casting reduces as compared to sand casting.<br>
+8.	Substantially reduced machining saving further costs in the production lifecycle of a casting.<br>
+9.	Combines the benefits of investment casting and sand casting process beautifully.<br>
+10.	Environmentally friendly by reducing overall sand requirement and carbon generation. Less polluting than a conventional sand foundry.<br>
+</p>
+        </div>
+      </div>
+    </section>
+		</div>
+   <!--End Team Detail-->
+   
+   
+   </div>
+   <!--End Content-->
+   
+   
+   
+   
+<footer id="footer" class="footer">
+
+    <div class="footer-content position-relative">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Atlas Foundries</h3>
+              <p>
+Office – 225/2 CIT Road, Scheme VII M, Kolkata - 700054<br>
+Works – JL No.11, Perore Road, Gram Basantapur, MouzaBhetkepara, Munsirhat, Howrah - 711410.<br>
+
+<strong>Phone:</strong> +91 98307 35480<br>
+                <strong>Email:</strong> enquiry@atlasfoundries.com<br>
+              </p>
+             </div>
+          </div><!-- End footer info column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="quality.html">Quality</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+	  <li><a href="lost-foam-manufacturing.html">Lost Foam Manufacturing</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          </div>
+      </div>
+    </div>
+
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          <p></p>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
+        
+        </div>
+      </div>
+    </div>
+
+    
+
+  </footer>
+  <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <span class="copyrights">© Copyright Atlas Foundries. All Rights Reserved Designed by Dreamline Production</span>
+              </div>
+            </div>
+          </div>
+
+          <a class="back-to-top" href="#."></a>
+        </div>
+
+
+
+<a href="#0" class="cd-top"></a>
+  </div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<!-- SMOOTH SCROLL -->	
+<!--<script type="text/javascript" src="js/scroll-desktop.js"></script>
+<script type="text/javascript" src="js/scroll-desktop-smooth.js"></script>-->
+
+<!-- START REVOLUTION SLIDER -->	
+<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
+
+
+
+<!-- Date Picker and input hover -->
+<script type="text/javascript" src="js/classie.js"></script> 
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js"></script>
+
+
+<!-- Welcome Tabs -->	
+<script type="text/javascript" src="js/tabs.js"></script>
+
+
+<!-- All Carousel -->
+<script type="text/javascript" src="js/owl.carousel.js"></script>
+
+<!-- Mobile Menu -->
+<script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+
+
+<!-- All Scripts -->
+<script type="text/javascript" src="js/custom.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slides = document.querySelectorAll("#team-detail .post.item");
+    const steps  = document.querySelectorAll(".steps li");
+
+    let currentIndex = 0;
+
+    // Hide all slides
+    function hideAll() {
+        slides.forEach(slide => slide.style.display = "none");
+    }
+
+    // Show slide by index
+    function showSlide(index) {
+        hideAll();
+
+        if (slides[index]) {
+            slides[index].style.display = "block";
+            currentIndex = index;
+        }
+
+        // update steps
+        const step = slides[index]?.dataset.step;
+        steps.forEach(li => li.classList.remove("active"));
+        const activeStep = document.querySelector(`.steps li[data-step="${step}"]`);
+        if (activeStep) activeStep.classList.add("active");
+    }
+
+    // Step click
+    steps.forEach(step => {
+        step.addEventListener("click", function () {
+            const stepValue = this.dataset.step;
+
+            const targetIndex = [...slides].findIndex(
+                slide => slide.dataset.step === stepValue
+            );
+
+            if (targetIndex !== -1) {
+                showSlide(targetIndex);
+            }
+        });
+    });
+
+    // Init
+    showSlide(0);
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const processTitle = document.querySelector(".process-title");
+  if (!processTitle) return;
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          processTitle.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  observer.observe(processTitle);
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const titles = document.querySelectorAll(".main-title");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
+
+  titles.forEach(title => observer.observe(title));
+});
+</script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const headers = document.querySelectorAll(".team .section-header");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    requestAnimationFrame(() => {
+                        entry.target.classList.add("in-view");
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: "0px 0px -80px 0px"
+        }
+    );
+
+    headers.forEach(header => observer.observe(header));
+});
+</script>
+
+
+<script>
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+
+  setTimeout(() => {
+    preloader.classList.add("fade-out");
+  }, 900); // slightly delayed for smooth exit
+});
+</script>
+
+
+
+
+  </body>
+</html>
